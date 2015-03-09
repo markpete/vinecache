@@ -1,0 +1,463 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D94572EF1AAA4DD50020403B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D94572EC1AAA4DD50020403B /* Bolts.framework */; };
+		D94572F01AAA4DD50020403B /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D94572ED1AAA4DD50020403B /* FacebookSDK.framework */; };
+		D94572F11AAA4DD50020403B /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D94572EE1AAA4DD50020403B /* FBAudienceNetwork.framework */; };
+		D94572F31AAA4EDE0020403B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D94572F21AAA4EDE0020403B /* Default-568h@2x.png */; };
+		D94572FA1AAA57D10020403B /* StartupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94572F91AAA57D10020403B /* StartupViewController.swift */; };
+		D95E72FA1AA978AF00DA1771 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95E72F91AA978AF00DA1771 /* AppDelegate.swift */; };
+		D95E72FC1AA978AF00DA1771 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95E72FB1AA978AF00DA1771 /* FirstViewController.swift */; };
+		D95E72FE1AA978AF00DA1771 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95E72FD1AA978AF00DA1771 /* SecondViewController.swift */; };
+		D95E73011AA978AF00DA1771 /* Vine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D95E72FF1AA978AF00DA1771 /* Vine.storyboard */; };
+		D95E73031AA978AF00DA1771 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D95E73021AA978AF00DA1771 /* Images.xcassets */; };
+		D95E73121AA978AF00DA1771 /* VineCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95E73111AA978AF00DA1771 /* VineCacheTests.swift */; };
+		D95E731E1AA9804A00DA1771 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D95E731D1AA9804A00DA1771 /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D95E730C1AA978AF00DA1771 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D95E72EC1AA978AF00DA1771 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D95E72F31AA978AF00DA1771;
+			remoteInfo = VineCache;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D94572EC1AAA4DD50020403B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		D94572ED1AAA4DD50020403B /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		D94572EE1AAA4DD50020403B /* FBAudienceNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBAudienceNetwork.framework; sourceTree = "<group>"; };
+		D94572F21AAA4EDE0020403B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		D94572F91AAA57D10020403B /* StartupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartupViewController.swift; sourceTree = "<group>"; };
+		D94572FB1AAA5C4A0020403B /* VineCache-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VineCache-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		D95E72F41AA978AF00DA1771 /* VineCache.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VineCache.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D95E72F81AA978AF00DA1771 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D95E72F91AA978AF00DA1771 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D95E72FB1AA978AF00DA1771 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		D95E72FD1AA978AF00DA1771 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		D95E73001AA978AF00DA1771 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Vine.storyboard; sourceTree = "<group>"; };
+		D95E73021AA978AF00DA1771 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D95E730B1AA978AF00DA1771 /* VineCacheTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VineCacheTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D95E73101AA978AF00DA1771 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D95E73111AA978AF00DA1771 /* VineCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VineCacheTests.swift; sourceTree = "<group>"; };
+		D95E731D1AA9804A00DA1771 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D95E72F11AA978AF00DA1771 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D94572F11AAA4DD50020403B /* FBAudienceNetwork.framework in Frameworks */,
+				D94572EF1AAA4DD50020403B /* Bolts.framework in Frameworks */,
+				D94572F01AAA4DD50020403B /* FacebookSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D95E73081AA978AF00DA1771 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D94572EB1AAA4DAE0020403B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D94572EC1AAA4DD50020403B /* Bolts.framework */,
+				D94572ED1AAA4DD50020403B /* FacebookSDK.framework */,
+				D94572EE1AAA4DD50020403B /* FBAudienceNetwork.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D95E72EB1AA978AF00DA1771 = {
+			isa = PBXGroup;
+			children = (
+				D95E72F61AA978AF00DA1771 /* VineCache */,
+				D95E730E1AA978AF00DA1771 /* VineCacheTests */,
+				D95E72F51AA978AF00DA1771 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D95E72F51AA978AF00DA1771 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D95E72F41AA978AF00DA1771 /* VineCache.app */,
+				D95E730B1AA978AF00DA1771 /* VineCacheTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D95E72F61AA978AF00DA1771 /* VineCache */ = {
+			isa = PBXGroup;
+			children = (
+				D94572FB1AAA5C4A0020403B /* VineCache-Bridging-Header.h */,
+				D94572F21AAA4EDE0020403B /* Default-568h@2x.png */,
+				D94572EB1AAA4DAE0020403B /* Frameworks */,
+				D95E72F91AA978AF00DA1771 /* AppDelegate.swift */,
+				D95E72FB1AA978AF00DA1771 /* FirstViewController.swift */,
+				D95E72FD1AA978AF00DA1771 /* SecondViewController.swift */,
+				D95E72FF1AA978AF00DA1771 /* Vine.storyboard */,
+				D95E73021AA978AF00DA1771 /* Images.xcassets */,
+				D95E72F71AA978AF00DA1771 /* Supporting Files */,
+				D95E731D1AA9804A00DA1771 /* Main.storyboard */,
+				D94572F91AAA57D10020403B /* StartupViewController.swift */,
+			);
+			path = VineCache;
+			sourceTree = "<group>";
+		};
+		D95E72F71AA978AF00DA1771 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D95E72F81AA978AF00DA1771 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D95E730E1AA978AF00DA1771 /* VineCacheTests */ = {
+			isa = PBXGroup;
+			children = (
+				D95E73111AA978AF00DA1771 /* VineCacheTests.swift */,
+				D95E730F1AA978AF00DA1771 /* Supporting Files */,
+			);
+			path = VineCacheTests;
+			sourceTree = "<group>";
+		};
+		D95E730F1AA978AF00DA1771 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D95E73101AA978AF00DA1771 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D95E72F31AA978AF00DA1771 /* VineCache */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D95E73151AA978AF00DA1771 /* Build configuration list for PBXNativeTarget "VineCache" */;
+			buildPhases = (
+				D95E72F01AA978AF00DA1771 /* Sources */,
+				D95E72F11AA978AF00DA1771 /* Frameworks */,
+				D95E72F21AA978AF00DA1771 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VineCache;
+			productName = VineCache;
+			productReference = D95E72F41AA978AF00DA1771 /* VineCache.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D95E730A1AA978AF00DA1771 /* VineCacheTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D95E73181AA978AF00DA1771 /* Build configuration list for PBXNativeTarget "VineCacheTests" */;
+			buildPhases = (
+				D95E73071AA978AF00DA1771 /* Sources */,
+				D95E73081AA978AF00DA1771 /* Frameworks */,
+				D95E73091AA978AF00DA1771 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D95E730D1AA978AF00DA1771 /* PBXTargetDependency */,
+			);
+			name = VineCacheTests;
+			productName = VineCacheTests;
+			productReference = D95E730B1AA978AF00DA1771 /* VineCacheTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D95E72EC1AA978AF00DA1771 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = FuzzyGhost;
+				TargetAttributes = {
+					D95E72F31AA978AF00DA1771 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					D95E730A1AA978AF00DA1771 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = D95E72F31AA978AF00DA1771;
+					};
+				};
+			};
+			buildConfigurationList = D95E72EF1AA978AF00DA1771 /* Build configuration list for PBXProject "VineCache" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D95E72EB1AA978AF00DA1771;
+			productRefGroup = D95E72F51AA978AF00DA1771 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D95E72F31AA978AF00DA1771 /* VineCache */,
+				D95E730A1AA978AF00DA1771 /* VineCacheTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D95E72F21AA978AF00DA1771 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D95E731E1AA9804A00DA1771 /* Main.storyboard in Resources */,
+				D94572F31AAA4EDE0020403B /* Default-568h@2x.png in Resources */,
+				D95E73011AA978AF00DA1771 /* Vine.storyboard in Resources */,
+				D95E73031AA978AF00DA1771 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D95E73091AA978AF00DA1771 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D95E72F01AA978AF00DA1771 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D95E72FE1AA978AF00DA1771 /* SecondViewController.swift in Sources */,
+				D95E72FA1AA978AF00DA1771 /* AppDelegate.swift in Sources */,
+				D95E72FC1AA978AF00DA1771 /* FirstViewController.swift in Sources */,
+				D94572FA1AAA57D10020403B /* StartupViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D95E73071AA978AF00DA1771 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D95E73121AA978AF00DA1771 /* VineCacheTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D95E730D1AA978AF00DA1771 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D95E72F31AA978AF00DA1771 /* VineCache */;
+			targetProxy = D95E730C1AA978AF00DA1771 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D95E72FF1AA978AF00DA1771 /* Vine.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D95E73001AA978AF00DA1771 /* Base */,
+			);
+			name = Vine.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D95E73131AA978AF00DA1771 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D95E73141AA978AF00DA1771 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D95E73161AA978AF00DA1771 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/VineCache",
+				);
+				INFOPLIST_FILE = VineCache/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "VineCache-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D95E73171AA978AF00DA1771 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/VineCache",
+				);
+				INFOPLIST_FILE = VineCache/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "VineCache-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		D95E73191AA978AF00DA1771 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = VineCacheTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VineCache.app/VineCache";
+			};
+			name = Debug;
+		};
+		D95E731A1AA978AF00DA1771 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = VineCacheTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VineCache.app/VineCache";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D95E72EF1AA978AF00DA1771 /* Build configuration list for PBXProject "VineCache" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D95E73131AA978AF00DA1771 /* Debug */,
+				D95E73141AA978AF00DA1771 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D95E73151AA978AF00DA1771 /* Build configuration list for PBXNativeTarget "VineCache" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D95E73161AA978AF00DA1771 /* Debug */,
+				D95E73171AA978AF00DA1771 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D95E73181AA978AF00DA1771 /* Build configuration list for PBXNativeTarget "VineCacheTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D95E73191AA978AF00DA1771 /* Debug */,
+				D95E731A1AA978AF00DA1771 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D95E72EC1AA978AF00DA1771 /* Project object */;
+}
