@@ -13,5 +13,14 @@
     "express": "~4.12.2",
     "morgan": "~1.5.1",
     "serve-favicon": "~2.2.0"
+  },
+  "devDependencies": {
+    "del": "^1.1.1",
+    "gulp": "^3.8.11",
+    "gulp-onejs-build": "^2.0.3",
+    "gulp-tsc": "^0.9.2",
+    "gulp-util": "^3.0.4",
+    "run-sequence": "^1.0.2",
+    "typescript": "^1.4.1"
   }
 }
