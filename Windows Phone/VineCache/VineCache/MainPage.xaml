@@ -1,0 +1,23 @@
+﻿<Page
+    x:Class="VineCache.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VineCache"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:facebookControls="using:Facebook.Client.Controls"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid x:Name="BootPanel" Background="Transparent" Visibility="Visible">
+            <TextBlock x:Name="bootAppNameTextBlock" TextAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" Text="VineCache" FontSize="40" VerticalAlignment="Top" Height="48" Width="385" Foreground="Green" Margin="7,81,8,0"/>
+            <Image x:Name="bootImage" HorizontalAlignment="Center" Height="383" Margin="0,70,0,0" VerticalAlignment="Center" Width="380" Source="Assets/flower-vine-hi.png"/>
+            <facebookControls:LoginButton x:Name="facebookLoginButton" Grid.Row="2" Margin="0,0,0,80" Width="200" HorizontalAlignment="Center" VerticalAlignment="Bottom" SessionStateChanged="facebookLoginButton_OnSessionStateChanged" />
+        </Grid>
+
+        <Grid x:Name="ContentPanel" Background="Transparent" Visibility="Collapsed">
+
+        </Grid>
+    </Grid>
+</Page>
