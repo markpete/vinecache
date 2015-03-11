@@ -1,2 +1,4 @@
 #exclude node_modules from git
 /node_modules
+/deployment
+/public/javascripts
