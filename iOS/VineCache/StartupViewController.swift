@@ -31,6 +31,8 @@ class StartupViewController: UIViewController, FBLoginViewDelegate {
     func loginViewFetchedUserInfo(loginView: FBLoginView!, user: FBGraphUser!) {
         println("User Logged In")
         fbProfilePic.profileID = user.objectID
+        
+        self.performSegueWithIdentifier("segueIdentifier", sender: self)
     }
     
     func loginViewFetchedUserInfo(loginView : FBLoginView!, user: FBGraphUser) {
@@ -39,6 +41,11 @@ class StartupViewController: UIViewController, FBLoginViewDelegate {
         println("User Name: \(user.name)")
         var userEmail = user.objectForKey("email") as String
         println("User Email: \(userEmail)")
+        
+        self.performSegueWithIdentifier("segueIdentifier", sender: self)
+        
+        //let DisplayVideoViewController = self.storyboard?.instantiateViewControllerWithIdentifier("DisplayVideoViewController") as SecondViewController
+        //self.navigationController?.pushViewController(DisplayVideoViewController, animated: true)
     }
     
     func loginViewShowingLoggedOutUser(loginView : FBLoginView!) {
