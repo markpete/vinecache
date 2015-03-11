@@ -1,4 +1,12 @@
-﻿document.addEventListener("DOMContentLoaded", (ev: Event) => {
+﻿if (document.readyState === "complete") {
+    initPage();
+} else {
+    document.addEventListener("DOMContentLoaded", (ev: Event) => {
+        initPage();
+    });
+}
+
+function initPage() {
     var title = document.title
 
     var header = document.createElement("h1");
@@ -8,5 +16,5 @@
 
     document.body.appendChild(header);
     document.body.appendChild(description);
-});
+}
 
