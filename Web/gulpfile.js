@@ -18,14 +18,6 @@ var plugins = require("gulp-load-plugins")({
     replaceString: /\bgulp[\-.]/
 });
 
-gulp.task('buildExternalLib', function () {
-    gulp.src(plugins.mainBowerFiles())
-		.pipe(plugins.filter('*.js'))
-		.pipe(plugins.concat('externalLib.js'))
-		.pipe(plugins.uglify())
-		.pipe(gulp.dest(paths.ts.dest));
-});
-
 gulp.task('zip', function () {
     var appFiles = ['views/**/*','public/**/*','routes/**/*', 'bin/**/*', 'app.js', 'package.json'];
     return gulp.src(appFiles, {base: "."})
@@ -42,7 +34,9 @@ gulp.task('clean', function (cb) {
 });
 
 // Build
-gulp.task('build', function () {
+gulp.task('build', ['buildTS', 'buildExternalLib']);
+
+gulp.task('buildTS', function () {
     return gulp
         .src(paths.ts.src)
         .pipe(tsc({
@@ -53,14 +47,22 @@ gulp.task('build', function () {
         .pipe(gulp.dest(paths.ts.dest));
 });
 
-// Rebuild - Clean & Build
+gulp.task('buildExternalLib', function () {
+    gulp.src(plugins.mainBowerFiles())
+		.pipe(plugins.filter('*.js'))
+		.pipe(plugins.concat('externalLib.js'))
+		.pipe(plugins.uglify())
+		.pipe(gulp.dest(paths.ts.dest));
+});
+
+// Deploy - Rebuild and Zip
 gulp.task('deploy', function (cb) {
     seq('rebuild', 'zip', cb);
 });
 
 // Rebuild - Clean & Build
 gulp.task('rebuild', function (cb) {
-    seq('clean', 'build', 'buildExternalLib', cb);
+    seq('clean', 'build', cb);
 });
 
 // Watch
