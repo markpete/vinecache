@@ -19,7 +19,7 @@ var plugins = require("gulp-load-plugins")({
 });
 
 gulp.task('zip', function () {
-    var appFiles = ['views/**/*','public/**/*','routes/**/*', 'bin/**/*', 'app.js', 'package.json'];
+    var appFiles = ['views/**/*','public/**/*','routes/**/*', 'bin/**/*', 'main.js', 'package.json'];
     return gulp.src(appFiles, {base: "."})
         .pipe(plugins.zip('vineCache.zip'))
         .pipe(gulp.dest('deployment'));
