@@ -15,6 +15,11 @@
 		D95E73031AA978AF00DA1771 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D95E73021AA978AF00DA1771 /* Images.xcassets */; };
 		D95E73121AA978AF00DA1771 /* VineCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95E73111AA978AF00DA1771 /* VineCacheTests.swift */; };
 		D95E731E1AA9804A00DA1771 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D95E731D1AA9804A00DA1771 /* Main.storyboard */; };
+		D9759A1A1AB181E400CD2668 /* ParseLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9759A191AB181E400CD2668 /* ParseLibrary.swift */; };
+		D9759A1C1AB182B000CD2668 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9759A1B1AB182B000CD2668 /* Bolts.framework */; };
+		D9759A1E1AB185F100CD2668 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9759A1D1AB185F100CD2668 /* Parse.framework */; };
+		D9759A211AB1862D00CD2668 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9759A1F1AB1862D00CD2668 /* FacebookSDK.framework */; };
+		D9759A221AB1862D00CD2668 /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9759A201AB1862D00CD2668 /* FBAudienceNetwork.framework */; };
 		D9B977C51AB17BE50032B652 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B9779A1AB17B810032B652 /* AudioToolbox.framework */; };
 		D9B977C61AB17BE50032B652 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B9779B1AB17B810032B652 /* CFNetwork.framework */; };
 		D9B977C71AB17BE50032B652 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B9779C1AB17B810032B652 /* CoreGraphics.framework */; };
@@ -26,11 +31,6 @@
 		D9B977CD1AB17BE50032B652 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B977A21AB17B810032B652 /* Security.framework */; };
 		D9B977CE1AB17BE50032B652 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B977A31AB17B810032B652 /* StoreKit.framework */; };
 		D9B977CF1AB17BE50032B652 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B977A41AB17B810032B652 /* SystemConfiguration.framework */; };
-		D9B977D01AB17BE50032B652 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B977981AB17B040032B652 /* Parse.framework */; };
-		D9B977D11AB17BE50032B652 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D94572EC1AAA4DD50020403B /* Bolts.framework */; };
-		D9B977D21AB17BE50032B652 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D94572ED1AAA4DD50020403B /* FacebookSDK.framework */; };
-		D9B977D31AB17BE50032B652 /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D94572EE1AAA4DD50020403B /* FBAudienceNetwork.framework */; };
-		D9B977FE1AB17CD80032B652 /* ParseLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B977FD1AB17CD80032B652 /* ParseLibrary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,9 +44,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D94572EC1AAA4DD50020403B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		D94572ED1AAA4DD50020403B /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
-		D94572EE1AAA4DD50020403B /* FBAudienceNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBAudienceNetwork.framework; sourceTree = "<group>"; };
 		D94572F91AAA57D10020403B /* StartupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartupViewController.swift; sourceTree = "<group>"; };
 		D95E72F41AA978AF00DA1771 /* VineCache.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VineCache.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D95E72F81AA978AF00DA1771 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,7 +56,11 @@
 		D95E73101AA978AF00DA1771 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D95E73111AA978AF00DA1771 /* VineCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VineCacheTests.swift; sourceTree = "<group>"; };
 		D95E731D1AA9804A00DA1771 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		D9B977981AB17B040032B652 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		D9759A191AB181E400CD2668 /* ParseLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseLibrary.swift; sourceTree = "<group>"; };
+		D9759A1B1AB182B000CD2668 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Frameworks/Bolts.framework; sourceTree = "<group>"; };
+		D9759A1D1AB185F100CD2668 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Frameworks/Parse.framework; sourceTree = "<group>"; };
+		D9759A1F1AB1862D00CD2668 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = Frameworks/FacebookSDK.framework; sourceTree = "<group>"; };
+		D9759A201AB1862D00CD2668 /* FBAudienceNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBAudienceNetwork.framework; path = Frameworks/FBAudienceNetwork.framework; sourceTree = "<group>"; };
 		D9B9779A1AB17B810032B652 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		D9B9779B1AB17B810032B652 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		D9B9779C1AB17B810032B652 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -72,7 +73,6 @@
 		D9B977A31AB17B810032B652 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		D9B977A41AB17B810032B652 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D9B977D41AB17C740032B652 /* VineCache-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VineCache-Bridging-Header.h"; sourceTree = "<group>"; };
-		D9B977FD1AB17CD80032B652 /* ParseLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParseLibrary.swift; path = ../../../Parse/Parse/Parse/ParseLibrary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,9 +80,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9759A1C1AB182B000CD2668 /* Bolts.framework in Frameworks */,
 				D9B977C51AB17BE50032B652 /* AudioToolbox.framework in Frameworks */,
 				D9B977C61AB17BE50032B652 /* CFNetwork.framework in Frameworks */,
+				D9759A221AB1862D00CD2668 /* FBAudienceNetwork.framework in Frameworks */,
 				D9B977C71AB17BE50032B652 /* CoreGraphics.framework in Frameworks */,
+				D9759A1E1AB185F100CD2668 /* Parse.framework in Frameworks */,
 				D9B977C81AB17BE50032B652 /* CoreLocation.framework in Frameworks */,
 				D9B977C91AB17BE50032B652 /* libsqlite3.dylib in Frameworks */,
 				D9B977CA1AB17BE50032B652 /* libz.dylib in Frameworks */,
@@ -91,10 +94,7 @@
 				D9B977CD1AB17BE50032B652 /* Security.framework in Frameworks */,
 				D9B977CE1AB17BE50032B652 /* StoreKit.framework in Frameworks */,
 				D9B977CF1AB17BE50032B652 /* SystemConfiguration.framework in Frameworks */,
-				D9B977D01AB17BE50032B652 /* Parse.framework in Frameworks */,
-				D9B977D11AB17BE50032B652 /* Bolts.framework in Frameworks */,
-				D9B977D21AB17BE50032B652 /* FacebookSDK.framework in Frameworks */,
-				D9B977D31AB17BE50032B652 /* FBAudienceNetwork.framework in Frameworks */,
+				D9759A211AB1862D00CD2668 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +111,10 @@
 		D94572EB1AAA4DAE0020403B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D9759A1F1AB1862D00CD2668 /* FacebookSDK.framework */,
+				D9759A201AB1862D00CD2668 /* FBAudienceNetwork.framework */,
+				D9759A1D1AB185F100CD2668 /* Parse.framework */,
+				D9759A1B1AB182B000CD2668 /* Bolts.framework */,
 				D9B9779A1AB17B810032B652 /* AudioToolbox.framework */,
 				D9B9779B1AB17B810032B652 /* CFNetwork.framework */,
 				D9B9779C1AB17B810032B652 /* CoreGraphics.framework */,
@@ -122,10 +126,6 @@
 				D9B977A21AB17B810032B652 /* Security.framework */,
 				D9B977A31AB17B810032B652 /* StoreKit.framework */,
 				D9B977A41AB17B810032B652 /* SystemConfiguration.framework */,
-				D9B977981AB17B040032B652 /* Parse.framework */,
-				D94572EC1AAA4DD50020403B /* Bolts.framework */,
-				D94572ED1AAA4DD50020403B /* FacebookSDK.framework */,
-				D94572EE1AAA4DD50020403B /* FBAudienceNetwork.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -151,7 +151,7 @@
 		D95E72F61AA978AF00DA1771 /* VineCache */ = {
 			isa = PBXGroup;
 			children = (
-				D9B977FD1AB17CD80032B652 /* ParseLibrary.swift */,
+				D9759A191AB181E400CD2668 /* ParseLibrary.swift */,
 				D9B977D41AB17C740032B652 /* VineCache-Bridging-Header.h */,
 				D94572EB1AAA4DAE0020403B /* Frameworks */,
 				D95E72F91AA978AF00DA1771 /* AppDelegate.swift */,
@@ -292,7 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D95E72FE1AA978AF00DA1771 /* SecondViewController.swift in Sources */,
-				D9B977FE1AB17CD80032B652 /* ParseLibrary.swift in Sources */,
+				D9759A1A1AB181E400CD2668 /* ParseLibrary.swift in Sources */,
 				D95E72FA1AA978AF00DA1771 /* AppDelegate.swift in Sources */,
 				D95E72FC1AA978AF00DA1771 /* FirstViewController.swift in Sources */,
 				D94572FA1AAA57D10020403B /* StartupViewController.swift in Sources */,
@@ -417,11 +417,12 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/VineCache",
 					/Users/user28291/Documents/Parse/Parse/Parse,
+					"$(PROJECT_DIR)/VineCache/Frameworks",
 				);
 				INFOPLIST_FILE = VineCache/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "VineCache-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "VineCache/VineCache-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -435,11 +436,12 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/VineCache",
 					/Users/user28291/Documents/Parse/Parse/Parse,
+					"$(PROJECT_DIR)/VineCache/Frameworks",
 				);
 				INFOPLIST_FILE = VineCache/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "VineCache-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "VineCache/VineCache-Bridging-Header.h";
 			};
 			name = Release;
 		};
