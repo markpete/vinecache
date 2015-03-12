@@ -11,10 +11,9 @@ function initPage() {
 
     var header = document.createElement("h1");
     header.innerText = title;
-    var description = document.createElement("p");
-    description.innerText = "Welcome to " + title;
+    var list = ListUtilities.EventListBuilder.buildList();
 
     document.body.appendChild(header);
-    document.body.appendChild(description);
+    document.body.appendChild(list);
 }
 
