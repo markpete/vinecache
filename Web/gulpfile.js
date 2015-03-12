@@ -34,7 +34,7 @@ gulp.task('clean', function (cb) {
 });
 
 // Build
-gulp.task('build', ['buildTS', 'buildExternalLib']);
+gulp.task('build', ['buildTS']);
 
 gulp.task('buildTS', function () {
     return gulp
@@ -45,14 +45,6 @@ gulp.task('buildTS', function () {
             emitError: false
         }))
         .pipe(gulp.dest(paths.ts.dest));
-});
-
-gulp.task('buildExternalLib', function () {
-    gulp.src(plugins.mainBowerFiles())
-		.pipe(plugins.filter('*.js'))
-		.pipe(plugins.concat('externalLib.js'))
-		.pipe(plugins.uglify())
-		.pipe(gulp.dest(paths.ts.dest));
 });
 
 // Deploy - Rebuild and Zip
