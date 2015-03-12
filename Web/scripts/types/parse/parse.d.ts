@@ -88,14 +88,16 @@ declare module Parse {
         then<U>(resolvedCallback: (value: T) => U, rejectedCallback?: (reason: any) => U): IPromise<U>;
     }
 
-    interface Promise<T> {
+    class Promise<T> {
 
-        always(callback: Function): Promise<T>;
-        as(): Promise<T>;
+        static as<U>(result: U): Promise<U>;
+        static error<U>(reason: any): Promise<U>;
+		static is<U>(promise: Promise<U>): boolean;
+        static when<U>(promises: Promise<U>[]): Promise<U>;
+
+		always(callback: Function): Promise<T>;
         done(callback: Function): Promise<T>;
-        error(): Promise<T>;
         fail(callback: Function): Promise<T>;
-        is(): Promise<T>;
         reject(error: any): void;
         resolve(result: any): void;
         then<U>(resolvedCallback: (value: T) => Promise<U>,
@@ -104,8 +106,6 @@ declare module Parse {
             rejectedCallback?: (reason: any) => IPromise<U>): IPromise<T>;
         then<U>(resolvedCallback: (value: T) => U,
             rejectedCallback?: (reason: any) => U): IPromise<T>;
-
-        when(promises: Promise<T>[]): Promise<T>;
     }
 
     interface IBaseObject {
