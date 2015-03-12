@@ -16,6 +16,10 @@ router.get('/leaderboard', function (req, res, next) {
 /* GET event page. */
 router.get('/event', function (req, res, next) {
     res.render('event', { title: 'Event' });
+
+router.get('/fungus', function(req, res, next) {
+    res.render('fungus', { title: 'TestPage'});
+
 });
 
 io.on('connection', function(socket){
