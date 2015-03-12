@@ -30,8 +30,13 @@ class StartupViewController: UIViewController, FBLoginViewDelegate {
     
     func loginViewFetchedUserInfo(loginView: FBLoginView!, user: FBGraphUser!) {
         println("User Logged In")
-        fbProfilePic.profileID = user.objectID 
+        fbProfilePic.profileID = user.objectID
         
+        //get event and add player
+        _ParseDB?.GetNextAvailableEvent()
+        _ParseDB?.CreatePlayer(user.name, FacebookId: user.objectID.toInt()!, event: _PLEvent!)
+        
+        //Navigate to main page
         self.performSegueWithIdentifier("segueIdentifier", sender: self)
     }
     
@@ -42,14 +47,12 @@ class StartupViewController: UIViewController, FBLoginViewDelegate {
         var userEmail = user.objectForKey("email") as String
         println("User Email: \(userEmail)")
         
-        self.performSegueWithIdentifier("segueIdentifier", sender: self)
-        
         //let DisplayVideoViewController = self.storyboard?.instantiateViewControllerWithIdentifier("DisplayVideoViewController") as SecondViewController
         //self.navigationController?.pushViewController(DisplayVideoViewController, animated: true)
     }
     
     func loginViewShowingLoggedOutUser(loginView : FBLoginView!) {
-            println("User Logged Out")
+        println("User Logged Out")
     }
     
 }

@@ -11,14 +11,15 @@
 		8404D85D1AAFAC5300EEE085 /* UploadVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8404D85C1AAFAC5300EEE085 /* UploadVideoViewController.swift */; };
 		8404D85F1AAFBAFB00EEE085 /* Fountain.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8404D85E1AAFBAFB00EEE085 /* Fountain.mp4 */; };
 		8404D8611AB0E45700EEE085 /* MainGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8404D8601AB0E45700EEE085 /* MainGameViewController.swift */; };
-        D94572FA1AAA57D10020403B /* StartupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94572F91AAA57D10020403B /* StartupViewController.swift */; };
+		84577E5E1AB20ED800F0C2E0 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84577E5D1AB20ED800F0C2E0 /* TimerView.swift */; };
+		84577E601AB2166E00F0C2E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84577E5F1AB2166E00F0C2E0 /* Main.storyboard */; };
+		D94572FA1AAA57D10020403B /* StartupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94572F91AAA57D10020403B /* StartupViewController.swift */; };
 		D95E72FA1AA978AF00DA1771 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95E72F91AA978AF00DA1771 /* AppDelegate.swift */; };
 		D95E72FC1AA978AF00DA1771 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95E72FB1AA978AF00DA1771 /* FirstViewController.swift */; };
 		D95E72FE1AA978AF00DA1771 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95E72FD1AA978AF00DA1771 /* SecondViewController.swift */; };
 		D95E73011AA978AF00DA1771 /* Vine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D95E72FF1AA978AF00DA1771 /* Vine.storyboard */; };
 		D95E73031AA978AF00DA1771 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D95E73021AA978AF00DA1771 /* Images.xcassets */; };
 		D95E73121AA978AF00DA1771 /* VineCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95E73111AA978AF00DA1771 /* VineCacheTests.swift */; };
-		D95E731E1AA9804A00DA1771 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D95E731D1AA9804A00DA1771 /* Main.storyboard */; };
 		D9759A1A1AB181E400CD2668 /* ParseLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9759A191AB181E400CD2668 /* ParseLibrary.swift */; };
 		D9759A1C1AB182B000CD2668 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9759A1B1AB182B000CD2668 /* Bolts.framework */; };
 		D9759A1E1AB185F100CD2668 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9759A1D1AB185F100CD2668 /* Parse.framework */; };
@@ -53,6 +54,8 @@
 		8404D85E1AAFBAFB00EEE085 /* Fountain.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fountain.mp4; sourceTree = "<group>"; };
 		8404D8601AB0E45700EEE085 /* MainGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainGameViewController.swift; sourceTree = "<group>"; };
 		8404D8621AB0F83C00EEE085 /* VineCache.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = VineCache.entitlements; sourceTree = "<group>"; };
+		84577E5D1AB20ED800F0C2E0 /* TimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		84577E5F1AB2166E00F0C2E0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D94572F91AAA57D10020403B /* StartupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartupViewController.swift; sourceTree = "<group>"; };
 		D95E72F41AA978AF00DA1771 /* VineCache.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VineCache.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D95E72F81AA978AF00DA1771 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,7 +67,6 @@
 		D95E730B1AA978AF00DA1771 /* VineCacheTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VineCacheTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D95E73101AA978AF00DA1771 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D95E73111AA978AF00DA1771 /* VineCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VineCacheTests.swift; sourceTree = "<group>"; };
-		D95E731D1AA9804A00DA1771 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D9759A191AB181E400CD2668 /* ParseLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseLibrary.swift; sourceTree = "<group>"; };
 		D9759A1B1AB182B000CD2668 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Frameworks/Bolts.framework; sourceTree = "<group>"; };
 		D9759A1D1AB185F100CD2668 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Frameworks/Parse.framework; sourceTree = "<group>"; };
@@ -168,10 +170,10 @@
 				D95E72F91AA978AF00DA1771 /* AppDelegate.swift */,
 				D95E72FB1AA978AF00DA1771 /* FirstViewController.swift */,
 				D95E72FD1AA978AF00DA1771 /* SecondViewController.swift */,
-				D95E72FF1AA978AF00DA1771 /* Vine.storyboard */,
+				84577E5F1AB2166E00F0C2E0 /* Main.storyboard */,
 				D95E73021AA978AF00DA1771 /* Images.xcassets */,
 				D95E72F71AA978AF00DA1771 /* Supporting Files */,
-				D95E731D1AA9804A00DA1771 /* Main.storyboard */,
+				84577E5D1AB20ED800F0C2E0 /* TimerView.swift */,
 				8404D8601AB0E45700EEE085 /* MainGameViewController.swift */,
 				8404D85A1AAFAC3900EEE085 /* DisplayVideoViewController.swift */,
 				8404D85C1AAFAC5300EEE085 /* UploadVideoViewController.swift */,
@@ -183,6 +185,7 @@
 		D95E72F71AA978AF00DA1771 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D95E72FF1AA978AF00DA1771 /* Vine.storyboard */,
 				D95E72F81AA978AF00DA1771 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -292,10 +295,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D95E731E1AA9804A00DA1771 /* Main.storyboard in Resources */,
 				8404D85F1AAFBAFB00EEE085 /* Fountain.mp4 in Resources */,
 				D95E73011AA978AF00DA1771 /* Vine.storyboard in Resources */,
 				D95E73031AA978AF00DA1771 /* Images.xcassets in Resources */,
+				84577E601AB2166E00F0C2E0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84577E5E1AB20ED800F0C2E0 /* TimerView.swift in Sources */,
 				D95E72FE1AA978AF00DA1771 /* SecondViewController.swift in Sources */,
 				8404D85D1AAFAC5300EEE085 /* UploadVideoViewController.swift in Sources */,
 				D9759A1A1AB181E400CD2668 /* ParseLibrary.swift in Sources */,
