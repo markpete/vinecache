@@ -12,13 +12,12 @@ import MediaPlayer
 
 class UploadVideoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet var videoController: MPMoviePlayerController!
     var newMedia: Bool?
+    var videoURL: NSURL!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,8 +25,17 @@ class UploadVideoViewController: UIViewController, UIImagePickerControllerDelega
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func RecordButtonClick(sender: UIButton) {
+        captureVideo()
+    }
     
-    @IBAction func captureVideo(sender: AnyObject) {
+    @IBAction func UploadButtonClick(sender: UIButton) {
+        uploadVideo()
+    }
+    
+    func captureVideo() {
+        
+        println("enetered captureVideo method")
         
         if UIImagePickerController.isSourceTypeAvailable(
             UIImagePickerControllerSourceType.Camera) {
@@ -46,42 +54,25 @@ class UploadVideoViewController: UIViewController, UIImagePickerControllerDelega
         }
     }
     
+    func uploadVideo() {
+        
+    }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         
-        let mediaType = info[UIImagePickerControllerMediaType] as NSString
-        
+        self.videoURL = info[UIImagePickerControllerMediaURL] as NSURL
         self.dismissViewControllerAnimated(true, completion: nil)
-        
-        if mediaType.isEqualToString(kUTTypeImage as NSString) {
-            let image = info[UIImagePickerControllerOriginalImage]
-                as UIImage
-            
-            imageView.image = image
-            
-            if (newMedia == true) {
-                UIImageWriteToSavedPhotosAlbum(image, self,
-                    "image:didFinishSavingWithError:contextInfo:", nil)
-            } else if mediaType.isEqualToString(kUTTypeMovie as NSString) {
-                // Code to support video here
-            }
-            
-        }
+
+        self.videoController = MPMoviePlayerController(contentURL: self.videoURL)
+        self.videoController.view.center = self.view.center
+        self.videoController.view.frame = CGRectMake(50, 50, 300, 450)
+        self.videoController.controlStyle = MPMovieControlStyle.Embedded
+        self.view.addSubview(self.videoController.view)
+        self.videoController.play()
     }
-    
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

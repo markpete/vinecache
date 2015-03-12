@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eB1-Mu-OFX">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -24,18 +25,14 @@
                                     <rect key="frame" x="31" y="242" width="538" height="461"/>
                                 </variation>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="77" y="204" width="246" height="376"/>
+                                    <rect key="frame" x="77" y="196" width="246" height="376"/>
                                 </variation>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jNB-va-HfV" customClass="FBLoginView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Rx-Aa-Rja" customClass="FBProfilePictureView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="79" y="114" width="125" height="117"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="21" y="507" width="359" height="73"/>
                                 </variation>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="VineCache" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FB1-Pf-Tau">
@@ -63,6 +60,13 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Rx-Aa-Rja" customClass="FBProfilePictureView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="138" y="118" width="125" height="117"/>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -125,10 +129,10 @@
             </objects>
             <point key="canvasLocation" x="225" y="319"/>
         </scene>
-        <!--View Controller-->
+        <!--Main Game View Controller-->
         <scene sceneID="DDA-7z-R1o">
             <objects>
-                <viewController id="OD4-aI-vDK" sceneMemberID="viewController">
+                <viewController id="OD4-aI-vDK" customClass="MainGameViewController" customModule="VineCache" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="52F-qc-OQd"/>
                         <viewControllerLayoutGuide type="bottom" id="psi-b9-EBT"/>
@@ -137,7 +141,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Microsoft Hunt" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFH-uj-hYA" colorLabel="IBBuiltInLabel-Green">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Microsoft Hunt" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFH-uj-hYA" colorLabel="IBBuiltInLabel-Green">
                                 <rect key="frame" x="30" y="28" width="116" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
                                 <color key="textColor" red="0.28283018282674199" green="0.61637037627551017" blue="0.26636835256012509" alpha="1" colorSpace="calibratedRGB"/>
@@ -146,7 +150,7 @@
                                     <rect key="frame" x="27" y="33" width="172" height="21"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Find the location this video was taken:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xMs-Bv-O4d">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find the location this video was taken:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xMs-Bv-O4d">
                                 <rect key="frame" x="30" y="66" width="294" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" red="0.29583148812249249" green="0.62579719387755106" blue="0.26160904385843853" alpha="1" colorSpace="calibratedRGB"/>
@@ -155,7 +159,25 @@
                                     <rect key="frame" x="27" y="62" width="294" height="21"/>
                                 </variation>
                             </label>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0XS-Nd-XOI">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hint!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fiq-xT-S5B">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" red="0.29583148809999998" green="0.62579719389999999" blue="0.2616090439" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="27" y="442" width="51" height="21"/>
+                                </variation>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="etV-7s-UU1">
+                                <rect key="frame" x="35" y="547" width="528" height="2"/>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="41" y="652" width="528" height="2"/>
+                                </variation>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="22" y="544" width="138" height="2"/>
+                                </variation>
+                            </progressView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0XS-Nd-XOI">
                                 <rect key="frame" x="35" y="100" width="528" height="381"/>
                                 <variation key="heightClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="36" y="150" width="528" height="381"/>
@@ -167,34 +189,21 @@
                                     <segue destination="DlH-KL-ldB" kind="embed" id="33c-nD-3oE"/>
                                 </connections>
                             </containerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hint!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fiq-xT-S5B">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="18"/>
-                                <color key="textColor" red="0.29583148809999998" green="0.62579719389999999" blue="0.2616090439" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="27" y="442" width="51" height="21"/>
-                                </variation>
-                            </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="etV-7s-UU1">
-                                <rect key="frame" x="35" y="547" width="528" height="2"/>
-                                <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="41" y="652" width="528" height="2"/>
-                                </variation>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="22" y="544" width="138" height="2"/>
-                                </variation>
-                            </progressView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1v-jo-83V">
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1v-jo-83V">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="Record now!">
+                                <color key="backgroundColor" red="0.68959254625339139" green="1" blue="0.6776202672550603" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <color key="tintColor" red="0.6895925463" green="1" blue="0.67762026730000002" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Make yours!">
                                     <color key="titleColor" red="0.29583148809999998" green="0.62579719389999999" blue="0.2616090439" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="189" y="516" width="85" height="30"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="15"/>
+                                    <rect key="frame" x="179" y="516" width="96" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="RecordButtonClick:" destination="OD4-aI-vDK" eventType="touchDown" id="EtI-mj-iYL"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -202,9 +211,9 @@
                             <mask key="subviews">
                                 <exclude reference="XFH-uj-hYA"/>
                                 <exclude reference="xMs-Bv-O4d"/>
-                                <exclude reference="0XS-Nd-XOI"/>
                                 <exclude reference="Fiq-xT-S5B"/>
                                 <exclude reference="etV-7s-UU1"/>
+                                <exclude reference="0XS-Nd-XOI"/>
                                 <exclude reference="B1v-jo-83V"/>
                             </mask>
                         </variation>
@@ -212,15 +221,15 @@
                             <mask key="subviews">
                                 <include reference="XFH-uj-hYA"/>
                                 <include reference="xMs-Bv-O4d"/>
-                                <include reference="0XS-Nd-XOI"/>
                                 <include reference="Fiq-xT-S5B"/>
                                 <include reference="etV-7s-UU1"/>
+                                <include reference="0XS-Nd-XOI"/>
                                 <include reference="B1v-jo-83V"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
-                        <segue destination="b3P-rk-IX6" kind="show" id="WfJ-eX-NZd"/>
+                        <segue destination="b3P-rk-IX6" kind="show" identifier="segueIdentifier" id="WfJ-eX-NZd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jQA-15-YEO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -236,8 +245,62 @@
                         <viewControllerLayoutGuide type="bottom" id="lQd-MH-wwP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kOV-D5-2Ue">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qby-vl-dD7">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.6895925463" green="1" blue="0.67762026730000002" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Record">
+                                    <color key="titleColor" red="0.29583148809999998" green="0.62579719389999999" blue="0.2616090439" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="47" y="494" width="50" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="RecordButtonClick:" destination="b3P-rk-IX6" eventType="touchDown" id="BNK-3w-16E"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make your own video :)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ocs-hE-4eJ">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" red="0.29583148809999998" green="0.62579719389999999" blue="0.2616090439" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="80" y="20" width="221" height="24"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T85-h0-64S">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.6895925463" green="1" blue="0.67762026730000002" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Upload">
+                                    <color key="titleColor" red="0.29583148809999998" green="0.62579719389999999" blue="0.2616090439" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="285" y="494" width="50" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="UploadButtonClick:" destination="b3P-rk-IX6" eventType="touchDown" id="Yha-E0-elF"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="qby-vl-dD7"/>
+                                <exclude reference="ocs-hE-4eJ"/>
+                                <exclude reference="T85-h0-64S"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="qby-vl-dD7"/>
+                                <include reference="ocs-hE-4eJ"/>
+                                <include reference="T85-h0-64S"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jn1-6a-aSz" userLabel="First Responder" sceneMemberID="firstResponder"/>

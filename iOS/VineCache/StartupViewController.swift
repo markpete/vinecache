@@ -30,7 +30,7 @@ class StartupViewController: UIViewController, FBLoginViewDelegate {
     
     func loginViewFetchedUserInfo(loginView: FBLoginView!, user: FBGraphUser!) {
         println("User Logged In")
-        fbProfilePic.profileID = user.objectID
+        fbProfilePic.profileID = user.objectID 
         
         self.performSegueWithIdentifier("segueIdentifier", sender: self)
     }
