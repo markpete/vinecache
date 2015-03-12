@@ -92,10 +92,10 @@ declare module Parse {
 
         static as<U>(result: U): Promise<U>;
         static error<U>(reason: any): Promise<U>;
-		static is<U>(promise: Promise<U>): boolean;
+        static is<U>(promise: Promise<U>): boolean;
         static when<U>(promises: Promise<U>[]): Promise<U>;
 
-		always(callback: Function): Promise<T>;
+        always(callback: Function): Promise<T>;
         done(callback: Function): Promise<T>;
         fail(callback: Function): Promise<T>;
         reject(error: any): void;
