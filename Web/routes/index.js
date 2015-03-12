@@ -8,8 +8,14 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'VineCache' });
 });
 
+/* GET leaderboard page. */
 router.get('/leaderboard', function (req, res, next) {
     res.render('leaderboard', { title: 'VineCache -Leaderboard' });
+});
+
+/* GET event page. */
+router.get('/event', function (req, res, next) {
+    res.render('event', { title: 'Event' });
 });
 
 io.on('connection', function(socket){
