@@ -8,6 +8,10 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'VineCache' });
 });
 
+router.get('/leaderboard', function (req, res, next) {
+    res.render('leaderboard', { title: 'VineCache -Leaderboard' });
+});
+
 io.on('connection', function(socket){
   socket.on('chat message', function(msg){
     io.emit('chat message', msg);
