@@ -20,7 +20,6 @@ function initPage() {
 
     var container = document.createElement("div");
     container.className = "container-fluid";
-    document.body.appendChild(container);
 
     var row = createRow();
 
@@ -40,10 +39,20 @@ function initPage() {
     var list = ListUtilities.EventListBuilder.buildList();
     listCol.appendChild(list);
 
+    var button = document.createElement("button");
+    button.type = "button";
+    button.innerText= "OK";
+    button.onclick=function () {
+        window.location.href =  './fungus';
+    }
+    listCol.appendChild(button);
+
     row.appendChild(imgCol);
     row.appendChild(listCol);
 
     container.appendChild(row);
+    document.body.appendChild(container);
+
 }
 
 function createRow(): HTMLDivElement {
