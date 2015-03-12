@@ -47,7 +47,7 @@ namespace VineCache
 
         private void facebookLoginButton_OnSessionStateChanged(object sender, Facebook.Client.Controls.SessionStateChangedEventArgs e)
         {
-
+            
         }
     }
 }

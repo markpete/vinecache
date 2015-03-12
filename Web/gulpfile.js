@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
     tsc = require('gulp-tsc'),
     seq = require('run-sequence'),
+    //mainBowerFiles = require('main-bower-files'),
     del = require('del');
 
 var paths = {
@@ -12,6 +13,18 @@ var paths = {
     }
 };
 
+var plugins = require("gulp-load-plugins")({
+    pattern: ['gulp-*', 'gulp.*', 'main-bower-files'],
+    replaceString: /\bgulp[\-.]/
+});
+
+gulp.task('zip', function () {
+    var appFiles = ['views/**/*','public/**/*','routes/**/*', 'bin/**/*', 'main.js', 'package.json'];
+    return gulp.src(appFiles, {base: "."})
+        .pipe(plugins.zip('vineCache.zip'))
+        .pipe(gulp.dest('deployment'));
+});
+
 // Default
 gulp.task('default', ['build']);
 
@@ -21,7 +34,9 @@ gulp.task('clean', function (cb) {
 });
 
 // Build
-gulp.task('build', function () {
+gulp.task('build', ['buildTS']);
+
+gulp.task('buildTS', function () {
     return gulp
         .src(paths.ts.src)
         .pipe(tsc({
@@ -30,6 +45,11 @@ gulp.task('build', function () {
             emitError: false
         }))
         .pipe(gulp.dest(paths.ts.dest));
+});
+
+// Deploy - Rebuild and Zip
+gulp.task('deploy', function (cb) {
+    seq('rebuild', 'zip', cb);
 });
 
 // Rebuild - Clean & Build

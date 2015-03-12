@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.Devices.Geolocation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -27,6 +28,7 @@ namespace VineCache
     public sealed partial class App : Application
     {
         private TransitionCollection transitions;
+        private static Geolocator s_GPS;
 
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
@@ -152,7 +154,22 @@ namespace VineCache
         /// <param name="session"></param>
         private void OnFacebookAuthenticationFinished(AccessTokenData session)
         {
-            //TODO: Add transition to new page when authentication has finished
+            Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(typeof(DisplayVideoPage));
+        }
+
+        internal static Geolocator GPS
+        {
+            get
+            {
+                if (s_GPS == null)
+                {
+                    s_GPS = new Geolocator();
+                    s_GPS.DesiredAccuracy = PositionAccuracy.High;
+                    s_GPS.MovementThreshold = 10;
+                }
+                return s_GPS;
+            }
         }
     }
 }
