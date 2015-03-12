@@ -42,7 +42,8 @@ gulp.task('buildTS', function () {
         .pipe(tsc({
             module: "CommonJS",
             sourcemap: true,
-            emitError: false
+            emitError: false,
+            target: "ES5"
         }))
         .pipe(gulp.dest(paths.ts.dest));
 });
