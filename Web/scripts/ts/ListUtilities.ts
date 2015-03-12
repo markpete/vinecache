@@ -14,7 +14,21 @@ module ListUtilities {
             var list: HTMLUListElement = document.createElement("ul");
             list.className = "list-group";
             this.itemProvider.addItems(list);
+            list.addEventListener("click", onListItemClick);
             return list;
+        }
+    }
+
+    function onListItemClick(ev: MouseEvent) {
+        var list: HTMLUListElement = <HTMLUListElement>ev.currentTarget;
+        var items = list.getElementsByTagName("li");
+        for (var idx = 0; idx < items.length; idx++) {
+            var item: HTMLLIElement = items.item(idx);
+            if (item === ev.target || $.contains(item, <Element>ev.target)) {
+                item.classList.add("active");
+            } else {
+                item.classList.remove("active");
+            }
         }
     }
 
