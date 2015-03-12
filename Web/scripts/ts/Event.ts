@@ -10,7 +10,7 @@ if (document.readyState === "complete") {
 }
 
 function initPageNew() {
-    var title = document.title
+    var title = document.title;
     var header = document.createElement("h1");
     header.innerText = title;
     document.body.appendChild(header);
