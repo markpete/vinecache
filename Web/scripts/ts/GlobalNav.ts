@@ -15,7 +15,7 @@ module GlobalNav {
             navContainer.className = "nav-collapse";
 
             var navItems = {
-                Home: "",
+                Home: "/",
                 Event: "event",
                 Leaderboard: "leaderboard"
             }
