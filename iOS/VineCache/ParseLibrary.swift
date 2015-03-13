@@ -110,9 +110,9 @@ class PLPlayer {
         }
     }
     
-    var FacebookId: Int {
+    var FacebookId: String {
         get {
-            return pfPerson["FacebookId"] as Int
+            return pfPerson["FacebookId"] as String
         }
     }
     
@@ -211,11 +211,11 @@ class ParseDB {
         }
     }
     
-    func CreatePlayer(Name: String, Email: String, FacebookId: Int, event: PLEvent){
+    func CreatePlayer(Name: String, Email: String, FacebookId: String, event: PLEvent){
         var person = PFObject(className: "Person")
         person["Name"] =  Name
         person["Email"] = Email
-        person["FacebookID"] = FacebookId
+        person["FacebookId"] = FacebookId
         
         var player = PFObject(className: "Player")
         player["Person"] = person
