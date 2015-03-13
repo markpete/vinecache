@@ -1,5 +1,5 @@
 ﻿/// <reference path="../types/parse/parse.d.ts" />
-
+///<reference path="../types/googleMaps/googleMaps.d.ts" />
 module EventHelper {
     export class EventHelper {
         private EventObject = Parse.Object.extend("Event");
