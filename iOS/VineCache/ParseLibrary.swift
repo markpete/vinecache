@@ -111,9 +111,9 @@ class PLPlayer {
         }
     }
     
-    var FacebookId: Int {
+    var FacebookId: String {
         get {
-            return pfPerson["FacebookId"] as Int
+            return pfPerson["FacebookId"] as String
         }
     }
     

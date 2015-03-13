@@ -39,8 +39,7 @@ class StartupViewController: UIViewController, FBLoginViewDelegate {
         _ParseDB?.GetNodes(_PLMap!)
         //_PLPlayer!.CurrentNode = _PLNodes!.first!
         
-        //Navigate to main page
-        self.performSegueWithIdentifier("segueIdentifier", sender: self)
+    
     }
 */
     
@@ -53,10 +52,13 @@ class StartupViewController: UIViewController, FBLoginViewDelegate {
         
         //Initialize Game
         _ParseDB = ParseDB()
-        _ParseDB?.GetNextAvailableEvent()
-        _ParseDB?.CreatePlayer(user.name, FacebookId: user.objectID, event: _PLEvent!)
-        _ParseDB?.GetNodes(_PLMap!)
+        //_ParseDB?.GetNextAvailableEvent()
+//        _ParseDB?.CreatePlayer(user.name, FacebookId: user.objectID, event: _PLEvent!)
+//        _ParseDB?.GetNodes(_PLMap!)
         //_PLPlayer!.CurrentNode = _PLNodes!.first!
+        
+        //Navigate to main page
+        self.performSegueWithIdentifier("segueIdentifier", sender: self)
         
         //let DisplayVideoViewController = self.storyboard?.instantiateViewControllerWithIdentifier("DisplayVideoViewController") as SecondViewController
         //self.navigationController?.pushViewController(DisplayVideoViewController, animated: true)
