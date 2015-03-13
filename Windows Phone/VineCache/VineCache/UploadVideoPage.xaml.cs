@@ -51,6 +51,9 @@ namespace VineCache
                 StorageFile videoStorageFile = await KnownFolders.VideosLibrary.CreateFileAsync(VideoFileName, CreationCollisionOption.ReplaceExisting);
                 MediaEncodingProfile encodingProfile = MediaEncodingProfile.CreateMp4(VideoEncodingQuality.HD720p);
                 await this.mediaCapture.StartRecordToStorageFileAsync(encodingProfile, videoStorageFile);
+
+                await Task.Delay(6000);
+                StopRecordingVideo();
             }
         }
 
