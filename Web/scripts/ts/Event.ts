@@ -10,8 +10,9 @@ if (document.readyState === "complete") {
 }
 
 function initPageNew() {
-    var eventInfo = JSON.parse(sessionStorage.getItem("currentEvent"));
+    var eventInfo = sessionStorage.getItem("currentEvent");
     var title = (eventInfo && eventInfo.Name || "Event")
+    //var title = "Microsoft Hunt";
 
     GlobalNav.GlobalNavBuilder.buildNav();
     var header = document.createElement("h1");
