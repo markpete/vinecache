@@ -13,8 +13,8 @@ body, html, #map-canvas {
 }
 
 .customBox {
-    background: yellow;
+    background: white;
     border: 1px solid black;
     position: absolute;
-
+    padding: 5px;
 }

@@ -44,7 +44,13 @@ module EventHelper {
                 .then((results: Parse.Object[]) => {
                 var promises = [];
                 results.forEach((result: Parse.Object) => {
-                    var player = new Player(new Person(), result.get("Score"), result.get("Coordinates"));
+                    var googlePlace;
+                    if (result.attributes.Coordinates === undefined) {
+                        googlePlace = new google.maps.LatLng(47, -122);
+                    } else {
+                        googlePlace = new google.maps.LatLng(result.attributes.Coordinates.latitude, result.attributes.Coordinates.longitude);
+                    }
+                    var player = new Player(new Person(), result.get("Score"), googlePlace);
                     player.id = result.id;
                     promises.push(result.relation("Person").query().find()
                         .then((results: Parse.Object[]) => {
@@ -82,7 +88,7 @@ module EventHelper {
     export class Person {
         name: string;
         email: string;
-        facebookID: number;
+        facebookID: string;
     }
     export class Video {
         location: string;
@@ -92,13 +98,14 @@ module EventHelper {
         score: number;
         person: Person;
         id: string;
-        coordinates: Geolocation;
+        coordinates: google.maps.LatLng;
         videos: Video[];
 
-        constructor(person: Person, score: number, coordinates: Geolocation) {
+        constructor(person: Person, score: number, coordinates: google.maps.LatLng) {
             this.person = person;
             this.score = score;
             this.videos = [];
+            this.coordinates = coordinates;
         }
 
         get name(): string {
@@ -115,10 +122,10 @@ module EventHelper {
             this.person.email = value;
         }
 
-        get facebookID(): number {
+        get facebookID(): string {
             return this.person.facebookID;
         }
-        set facebookID(value: number) {
+        set facebookID(value: string) {
             this.person.facebookID = value;
         }
     }

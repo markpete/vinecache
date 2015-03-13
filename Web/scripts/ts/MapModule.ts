@@ -73,6 +73,16 @@ module MapModule {
         this.div_.parentNode.removeChild(this.div_);
         this.div_ = null;
     }
+
+    TxtOverlay.prototype.remove = function () {
+        this.div_.parentNode.removeChild(this.div_);
+        this.div_ = null;
+    }
+
+    TxtOverlay.prototype.updatePosition = function (pos) {
+        this.pos = pos;
+    }
+
     TxtOverlay.prototype.hide = function () {
         if (this.div_) {
             this.div_.style.visibility = "hidden";
@@ -105,9 +115,17 @@ module MapModule {
         }
     }
 
+    class UsersMapData {
+        _id: string;
+        _eventPlayer: EventHelper.Player;
+        _marker: google.maps.Marker;
+        _txtOverlay: any;
+
+    }
+
     export class Map {
         _markers: google.maps.Marker[];
-        _playerMarkers: google.maps.Marker[];
+        _playerMarkers: UsersMapData[];
         _map: google.maps.Map;
         private _eventHelper: EventHelper.EventHelper;
         private _refreshRate: number;
@@ -177,22 +195,45 @@ module MapModule {
 
         private refreshList() {
             var internalMap = this;
-            console.dir(internalMap);
-            if (internalMap._playerMarkers.length == 0) {
                 internalMap._eventHelper.getPlayerData().then((players: EventHelper.Player[]) => {
                     players.forEach((player: EventHelper.Player) => {
-                        var marker = new google.maps.Marker({
-                            map: internalMap._map,
-                            position: new google.maps.LatLng(0, 0),
-                            title: player.name
-                        });
-                        var customTxt = "<div>Blah blah sdfsddddddddddddddd ddddddddddddddddddddd<ul><li>Blah 1<li>blah 2 </ul></div>";
-                        var txt = new TxtOverlay(new google.maps.LatLng(0, 0), customTxt, "customBox", internalMap._map);
-                        //var 
-                        console.log(marker);
+                        var currentPlayerOnMap = null;
+                        for (var i = 0; i < internalMap._playerMarkers.length; i++) {
+                            if (player.id == internalMap._playerMarkers[i]._id) {
+                                currentPlayerOnMap = i;
+                                break;
+                            }
+                        } 
+                        if (currentPlayerOnMap == null) {
+                            var usersMapData = new UsersMapData();
+                            usersMapData._id = player.id;
+                            usersMapData._eventPlayer = player;
+                            var marker = new google.maps.Marker({
+                                map: internalMap._map,
+                                position: player.coordinates,
+                                title: player.name,
+                                icon: 'images/player.png',
+                            });
+
+                            usersMapData._marker = marker;
+
+                            var customTxt = player.name;
+                            var txt = new TxtOverlay(player.coordinates, customTxt, "customBox", internalMap._map);
+
+                            usersMapData._txtOverlay = txt;
+
+                            internalMap._playerMarkers.push(usersMapData);
+                        } else {
+                            internalMap._playerMarkers[currentPlayerOnMap]._marker.setPosition(player.coordinates);
+                            internalMap._playerMarkers[currentPlayerOnMap]._eventPlayer = player;
+                            internalMap._playerMarkers[currentPlayerOnMap]._txtOverlay.updatePosition(player.coordinates);
+                            internalMap._playerMarkers[currentPlayerOnMap]._txtOverlay.draw(player.coordinates);
+                        }
+                        
+                        
                     });
                 });;
-            }
+            
         }
 
         private initializeMapInternal() {
@@ -211,7 +252,6 @@ module MapModule {
             var eventName = "Microsoft Hunt";
             var eventQuery = new Parse.Query("Event");
             eventQuery.equalTo("Name", eventName);
-            console.log(eventName);
             eventQuery.first({
                 success: (results) => {
                     if (results == null) {
@@ -230,7 +270,7 @@ module MapModule {
                             var nodeQuery = relation.query();
                             nodeQuery.find({
                                 success: (results) => {
-                    //                this.populateNodes(results);
+                                   this.populateNodes(results);
                                 },
                                 error: function (error) {
                                     alert("Failure retrieving Map nodes");
