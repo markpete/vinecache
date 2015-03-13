@@ -1,40 +1,41 @@
 ﻿///<reference path="../types/node/node.d.ts" />
 ///<reference path="../types/googleMaps/googleMaps.d.ts" />
+(function () {
+    if (document.readyState === "complete") {
+        initPage();
+    } else {
+        document.addEventListener("DOMContentLoaded",(ev: Event) => {
+            initPage();
+        });
+    }
 
-if (document.readyState === "complete") {
-    initPageNew();
-} else {
-    document.addEventListener("DOMContentLoaded",(ev: Event) => {
-        initPageNew();
-    });
-}
+    function initPage() {
+        var headerContainer = document.createElement("div");
+        headerContainer.className = "page-header";
+        document.body.appendChild(headerContainer);
 
-function initPageNew() {
-    var title = document.title
+        GlobalNav.GlobalNavBuilder.buildNav(headerContainer);
 
-    GlobalNav.GlobalNavBuilder.buildNav();
-    var header = document.createElement("h1");
-    header.innerText = title;
-    document.body.appendChild(header);
-    
-    var description = document.createElement("p");
-    description.innerText = "Welcome to " + title;
-    document.body.appendChild(description);
+        var header = document.createElement("h2");
+        header.innerText = sessionStorage.getItem("eventName");
+        header.style.color = "#4E9A06";
+        document.body.appendChild(header);
 
-    var mapDiv = document.createElement("div");
-    mapDiv.id = "map-canvas";
-    document.body.appendChild(mapDiv);
-    (new MapModule.Map()).initializeMap(); 
-    //window.addEventListener('load', function () {
-    //    if (document.getElementById('map')) {
+        var mapDiv = document.createElement("div");
+        mapDiv.id = "map-canvas";
+        document.body.appendChild(mapDiv);
+        (new MapModule.Map()).initializeMap(); 
+        //window.addEventListener('load', function () {
+        //    if (document.getElementById('map')) {
 
-    //                new google.maps.Map(document.getElementById('map'), {
-    //                    center: new google.maps.LatLng(0, 0),
-    //                    zoom: 3
-    //                });
+        //                new google.maps.Map(document.getElementById('map'), {
+        //                    center: new google.maps.LatLng(0, 0),
+        //                    zoom: 3
+        //                });
          
-    //    }
-    //}, false);
-    // 
-}
+        //    }
+        //}, false);
+        // 
+    }
+})();
 

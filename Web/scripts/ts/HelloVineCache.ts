@@ -13,7 +13,7 @@
         var headerContainer = document.createElement("div");
         headerContainer.className = "page-header";
         var header = document.createElement("h1");
-        header.style.color = "green";
+        header.style.color = "#4E9A06";
         header.innerText = title;
         headerContainer.appendChild(header);
 
@@ -40,6 +40,17 @@
 
         var list = EventList.EventListBuilder.buildList();
         listCol.appendChild(list);
+
+        var button = document.createElement("button");
+        button.type = "button";
+        button.innerText = "OK";
+        button.className = "btn btn-default";
+        button.onclick = function () {
+            var selectedItem: HTMLLIElement = <HTMLLIElement>($(list).children(".active").get(0));
+            sessionStorage.setItem("eventName", selectedItem.innerText);
+            window.location.href =  './event';
+        }
+        listCol.appendChild(button);
 
         row.appendChild(imgCol);
         row.appendChild(listCol);
