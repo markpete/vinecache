@@ -192,6 +192,18 @@ module MapModule {
                 internalMap._map.setCenter(internalMap._markers[0].getPosition());
             }
         }
+        private createRow(): HTMLDivElement {
+            var row: HTMLDivElement = document.createElement("div");
+            row.className = "row";
+            return row;
+        }
+        private createColumn(width: number): HTMLDivElement {
+            var col: HTMLDivElement = document.createElement("div");
+            col.className = "col-xs-" + width.toString() +
+            " col-sm-" + width.toString() +
+            " col-md-" + width.toString();
+            return col;
+        }
 
         private refreshList() {
             var internalMap = this;
@@ -214,6 +226,52 @@ module MapModule {
                                 title: player.name,
                                 icon: 'images/player.png',
                             });
+                            var markerContent = document.createElement("div");
+
+                            var markerTitle = document.createElement("h3");
+                            markerTitle.innerText = player.name;
+                            markerTitle.setAttribute("style", "text-align: center;");
+                            markerContent.appendChild(markerTitle);
+
+                            var row = this.createRow();
+
+                            var imgCol = this.createColumn(4);
+                            var image = document.createElement("img");
+                            image.className = "img-responsive";
+                            image.src = "/images/default.png";
+                            imgCol.appendChild(image);
+
+                            var secCol = this.createColumn(6);
+                            var divColumn = document.createElement("div");
+                            divColumn.innerHTML = "<p>Score:\t" + player.score + "</p>" +
+                                                "<p>Name:\t" + player.name + "</p>" +
+                                                "<p>Email:\t" + player.email + "</p>";
+                            
+                            secCol.appendChild(divColumn);
+
+                            row.appendChild(imgCol);
+                            row.appendChild(secCol);
+                            markerContent.appendChild(row);
+
+                            console.dir(player);
+                            //var video = document.createElement("video");
+                            //video.setAttribute("src", place.attributes.Video.url());
+                            //video.setAttribute("width", "100%");
+                            //video.setAttribute("height", "100%");
+                            //video.setAttribute("controls", "");
+                            //markerContent.appendChild(video);
+
+                            var infoWindow = new google.maps.InfoWindow({
+                                maxWidth: window.innerWidth * 0.3,
+                                maxHeight: window.innerHeight * 0.25,
+                            });
+
+                            google.maps.event.addListener(marker, 'click',(function (marker, content, infowindow) {
+                                return function () {
+                                    infowindow.setContent(content);
+                                    infowindow.open(internalMap._map, marker);
+                                };
+                            })(marker, markerContent.outerHTML, infoWindow));
 
                             usersMapData._marker = marker;
 
