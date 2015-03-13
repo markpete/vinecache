@@ -93,5 +93,5 @@ module PlayerSummaryList {
         }
     }
 
-    export var PlayerSummaryListBuilder = new AutoRefreshListBuilder(new PlayerSummaryProvider("Microsoft Hunt"));
+    export var PlayerSummaryListBuilder = new AutoRefreshListBuilder(new PlayerSummaryProvider(sessionStorage.getItem("eventName")));
 }

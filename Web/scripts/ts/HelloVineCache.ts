@@ -43,9 +43,12 @@
 
         var button = document.createElement("button");
         button.type = "button";
-        button.innerText= "OK";
-        button.onclick=function () {
-            window.location.href =  './fungus';
+        button.innerText = "OK";
+        button.className = "btn btn-default";
+        button.onclick = function () {
+            var selectedItem: HTMLLIElement = <HTMLLIElement>($(list).children(".active").get(0));
+            sessionStorage.setItem("eventName", selectedItem.innerText);
+            window.location.href =  './leaderboard';
         }
         listCol.appendChild(button);
 
