@@ -11,3 +11,10 @@ body, html, #map-canvas {
   height: 100%;
   width: 100%;
 }
+
+.customBox {
+    background: yellow;
+    border: 1px solid black;
+    position: absolute;
+
+}

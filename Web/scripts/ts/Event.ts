@@ -14,9 +14,9 @@
         headerContainer.className = "page-header";
         document.body.appendChild(headerContainer);
 
-        var eventName = sessionStorage.getItem("currentEvent") || "Event";
-        var title = eventName;
-
+        var eventInfo = sessionStorage.getItem("currentEvent");
+        var title = (eventInfo && eventInfo.Name || "Event")
+        
         GlobalNav.GlobalNavBuilder.buildNav(headerContainer);
 
         var header = document.createElement("h2");
