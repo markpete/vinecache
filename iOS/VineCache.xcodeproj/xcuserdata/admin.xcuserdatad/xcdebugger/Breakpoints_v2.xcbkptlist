@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VineCache/UploadVideoViewController.swift"
-            timestampString = "447814082.179659"
+            timestampString = "447904029.599407"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VineCache/UploadVideoViewController.swift"
-            timestampString = "447814624.231854"
+            timestampString = "447904029.599407"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VineCache/UploadVideoViewController.swift"
-            timestampString = "447815718.384603"
+            timestampString = "447904029.599407"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -118,15 +118,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VineCache/LoginViewController.swift"
+            timestampString = "447899625.679545"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VineCache/StartupViewController.swift"
-            timestampString = "447887976.044707"
+            timestampString = "447902715.990275"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "loginViewFetchedUserInfo(_:user:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VineCache/StartupViewController.swift"
+            timestampString = "447902879.310453"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "loginViewFetchedUserInfo(_:user:)"
             landmarkType = "5">
          </BreakpointContent>

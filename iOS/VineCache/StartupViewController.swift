@@ -32,9 +32,11 @@ class StartupViewController: UIViewController, FBLoginViewDelegate {
         println("User Logged In")
         fbProfilePic.profileID = user.objectID
         
-        //get event and add player
+        //Initialize Game
         _ParseDB?.GetNextAvailableEvent()
         _ParseDB?.CreatePlayer(user.name, FacebookId: user.objectID.toInt()!, event: _PLEvent!)
+        _ParseDB?.GetNodes(_PLMap!)
+        //_PLPlayer!.CurrentNode = _PLNodes!.first!
         
         //Navigate to main page
         self.performSegueWithIdentifier("segueIdentifier", sender: self)
