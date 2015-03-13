@@ -9,8 +9,10 @@ if (document.readyState === "complete") {
     });
 }
 
-function initPageNew() {
-    var title = document.title;
+function initPageNew() {f
+    var title = document.title
+
+    GlobalNav.GlobalNavBuilder.buildNav();
     var header = document.createElement("h1");
     header.innerText = title;
     document.body.appendChild(header);
