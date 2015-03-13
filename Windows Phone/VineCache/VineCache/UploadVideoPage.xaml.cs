@@ -64,39 +64,15 @@ namespace VineCache
             await this.mediaCapture.StopRecordAsync();
         }
 
-        private void UploadRecordedVideo()
+        private async void UploadRecordedVideo()
         {
-            App.parseDB.parseDelegate = new UploadVideoParseDelegate();
-            App.parseDB.GetNextAvailableEvent();
-        }
-
-        internal class UploadVideoParseDelegate : ParseDelegate
-        {
-            public void EventResult(PLEvent eventItem)
+            StorageFile videoStorageFile = await KnownFolders.VideosLibrary.GetFileAsync(VideoFileName);
+            if (videoStorageFile != null)
             {
-                App.parseDB.GetMap(eventItem);
-            }
-
-            public void MapResult(PLMap mapItem)
-            {
-                App.parseDB.GetNodes(mapItem);
-            }
-
-            public async void NodeResult(List<PLNode> nodeList)
-            {
-                StorageFile videoStorageFile = await KnownFolders.VideosLibrary.GetFileAsync(VideoFileName);
-                if (videoStorageFile != null)
-                {
-                    byte[] videoData = await ReadFile(videoStorageFile);
-                    App.parseDB.UploadVideo(videoData, nodeList[App.currentNodeNumba]);
-                }
-            }
-
-            public void VideoRetrieved(PLNode node)
-            {
+                byte[] videoData = await ReadFile(videoStorageFile);
+                App.parseDB.UploadVideo(videoData, ParseDB._PLNodes[App.currentNodeNumba]);
             }
         }
-
 
         /// <summary>
         /// Loads the byte data from a StorageFile
