@@ -12,14 +12,16 @@ if (document.readyState === "complete") {
 function initPageNew() {
     var title = document.title
 
-    GlobalNav.GlobalNavBuilder.buildNav();
-    var header = document.createElement("h1");
+    var headerContainer = document.createElement("div");
+    headerContainer.className = "page-header";
+    document.body.appendChild(headerContainer);
+
+    GlobalNav.GlobalNavBuilder.buildNav(headerContainer);
+
+    var header = document.createElement("h2");
     header.innerText = title;
+    header.style.color = "#4E9A06";
     document.body.appendChild(header);
-    
-    var description = document.createElement("p");
-    description.innerText = "Welcome to " + title;
-    document.body.appendChild(description);
 
     var mapDiv = document.createElement("div");
     mapDiv.id = "map-canvas";

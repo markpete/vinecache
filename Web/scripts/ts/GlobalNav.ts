@@ -1,6 +1,6 @@
 module GlobalNav {
     class NavBar {
-        buildNav() {
+        buildNav(parent?: HTMLElement) {
             var linkTag = document.createElement("link");
             linkTag.rel = "stylesheet";
             linkTag.href = "../stylesheets/respon-nav.css";
@@ -14,7 +14,8 @@ module GlobalNav {
             navContainer.id = "nav";
             navContainer.className = "nav-collapse";
 
-            var navItems= {
+            var navItems = {
+                Home: "",
                 Event: "event",
                 Leaders: "leaderboard"
             }
@@ -32,10 +33,13 @@ module GlobalNav {
                 }
             }
             navContainer.appendChild(list);
+            
             var scriptTag = document.createElement("script");
             scriptTag.innerText = "var nav = responsiveNav('#nav');"
             navContainer.appendChild(scriptTag);
-            document.body.appendChild(navContainer);
+
+            parent = parent || document.body;
+            parent.appendChild(navContainer);
         }
     }
     export var GlobalNavBuilder = new NavBar();

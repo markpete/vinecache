@@ -13,7 +13,7 @@
         var headerContainer = document.createElement("div");
         headerContainer.className = "page-header";
         var header = document.createElement("h1");
-        header.style.color = "green";
+        header.style.color = "#4E9A06";
         header.innerText = title;
         headerContainer.appendChild(header);
 
