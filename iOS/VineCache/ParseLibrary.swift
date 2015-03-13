@@ -212,7 +212,7 @@ class ParseDB {
         }
     }
     
-    func CreatePlayer(Name: String, FacebookId: Int, event: PLEvent){
+    func CreatePlayer(Name: String, FacebookId: String, event: PLEvent){
         var person = PFObject(className: "Person")
         person["Name"] =  Name
         person["FacebookID"] = FacebookId
