@@ -13,7 +13,7 @@
         <Grid x:Name="BootPanel" Background="Transparent" Visibility="Visible">
             <TextBlock x:Name="bootAppNameTextBlock" TextAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" Text="VineCache" FontSize="40" VerticalAlignment="Top" Height="48" Width="385" Foreground="Green" Margin="7,81,8,0"/>
             <Image x:Name="bootImage" HorizontalAlignment="Center" Height="383" Margin="0,70,0,0" VerticalAlignment="Center" Width="380" Source="Assets/flower-vine-hi.png"/>
-            <facebookControls:LoginButton x:Name="facebookLoginButton" Grid.Row="2" Margin="0,0,0,80" Width="200" HorizontalAlignment="Center" VerticalAlignment="Bottom" SessionStateChanged="facebookLoginButton_OnSessionStateChanged" />
+            <facebookControls:LoginButton x:Name="facebookLoginButton" Grid.Row="2" Margin="0,0,0,80" Width="200" HorizontalAlignment="Center" VerticalAlignment="Bottom" Permissions="public_profile" SessionStateChanged="facebookLoginButton_OnSessionStateChanged" />
         </Grid>
     </Grid>
 </Page>
