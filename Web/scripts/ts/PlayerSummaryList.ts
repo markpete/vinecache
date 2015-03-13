@@ -41,12 +41,16 @@ module PlayerSummaryList {
             var videosSection = document.createElement("div");
             videosSection.id = "videos_" + player.id;
             videosSection.className = "collapse";
+            var videosWell = document.createElement("div");
+            videosWell.className = "well";
+            videosSection.appendChild(videosWell);
+
             var videosRow = document.createElement("div");
             videosRow.className = "row";
             player.videos.forEach((value) => {
                 this.insertVideo(videosRow, value);
             });
-            videosSection.appendChild(videosRow);
+            videosWell.appendChild(videosRow);
 
             var collapseButton = document.createElement("button");
             collapseButton.type = "button";
@@ -79,6 +83,9 @@ module PlayerSummaryList {
             var videoElement = document.createElement("video");
             videoElement.src = video.url;
             videoElement.className = "img-responsive";
+            videoElement.addEventListener("click",(ev: MouseEvent) => {
+                ModalVideo.Instance.show((<HTMLVideoElement>ev.currentTarget).src);
+            });
             thumbnail.appendChild(videoElement);
 
             videoCol.appendChild(thumbnail);
