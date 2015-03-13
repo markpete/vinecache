@@ -15,7 +15,7 @@
         GlobalNav.GlobalNavBuilder.buildNav(headerContainer);
 
         var header = document.createElement("h2");
-        header.innerText = "Leaders";
+        header.innerHTML = "Leaderboard <small>" + sessionStorage.getItem("eventName") + "</small>";
         header.style.color = "#4E9A06";
         document.body.appendChild(header);
 
