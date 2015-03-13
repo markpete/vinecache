@@ -1,14 +1,19 @@
-﻿using Facebook.Client;
+﻿using Facebook;
+using Facebook.Client;
+using Parse;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Devices.Geolocation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
+using Windows.Storage.Streams;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -29,16 +34,24 @@ namespace VineCache
     {
         private TransitionCollection transitions;
         private static Geolocator s_GPS;
+		public static ParseDB parseDB;
+		public static string facebookToken;
+		public static string facebookName;
+		public static string facebookID;
+		public static string facebookEmail;
+		public static int currentNodeNumba = 0;
 
-        /// <summary>
-        /// Initializes the singleton application object.  This is the first line of authored code
-        /// executed, and as such is the logical equivalent of main() or WinMain().
-        /// </summary>
-        public App()
+		/// <summary>
+		/// Initializes the singleton application object.  This is the first line of authored code
+		/// executed, and as such is the logical equivalent of main() or WinMain().
+		/// </summary>
+		public App()
         {
             this.InitializeComponent();
             this.Suspending += this.OnSuspending;
-        }
+            ParseClient.Initialize("ODbBwcIu8uZ4zuJ8PGsinEtXeyUswCXL9pUnddov", "0xnE8Q36PWvW517XvQlCEyBmKS0etT5VEdP5gyaP");
+			parseDB = new ParseDB();
+		}
 
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points
@@ -105,6 +118,8 @@ namespace VineCache
 
             // Ensure the current window is active
             Window.Current.Activate();
+
+            //ParseAnalytics.TrackAppOpenedAsync();
         }
 
         /// <summary>
@@ -156,9 +171,50 @@ namespace VineCache
         {
             Frame rootFrame = Window.Current.Content as Frame;
             rootFrame.Navigate(typeof(DisplayVideoPage));
-        }
+			facebookToken = session.AccessToken;
+			facebookID = session.FacebookId;
 
-        internal static Geolocator GPS
+			parseDB.parseDelegate = new VineCacheParseDelegate();
+			parseDB.GetNextAvailableEvent();
+		}
+
+		internal class VineCacheParseDelegate : ParseDelegate
+		{
+			public void EventResult(PLEvent eventItem)
+			{
+				FacebookClient client = new FacebookClient(facebookToken);
+				client.GetTaskAsync("me", new { fields = "name, id, email" }).ContinueWith((Task<object> task, object item) => {
+					dynamic facebookInfo = task.Result;
+					App.facebookName = facebookInfo.name;
+					App.facebookID = facebookInfo.id;
+					//App.facebookEmail = facebookInfo.email;
+					parseDB.CreatePlayer(App.facebookName, App.facebookEmail, App.facebookID, item as PLEvent);
+					parseDB.GetMap(item as PLEvent);
+				}, eventItem);
+				
+			}
+
+			public void MapResult(PLMap mapItem)
+			{
+				parseDB.GetNodes(mapItem);
+			}
+
+			public void NodeResult(List<PLNode> nodeList)
+			{
+				parseDB.RetrieveVideo(nodeList[currentNodeNumba]);
+			}
+
+			public async void VideoRetrieved(PLNode node)
+			{
+				InMemoryRandomAccessStream s = new InMemoryRandomAccessStream();
+				StorageFolder folder = KnownFolders.VideosLibrary;
+				StorageFile file = await folder.CreateFileAsync("vinecachetargetvideo.mp4", CreationCollisionOption.ReplaceExisting);
+				await FileIO.WriteBytesAsync(file, node.Video as byte[]);
+			}
+		}
+
+
+		internal static Geolocator GPS
         {
             get
             {
