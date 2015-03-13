@@ -6,3 +6,8 @@ body {
 a {
   color: #00B7FF;
 }
+
+body, html, #map-canvas {
+  height: 100%;
+  width: 100%;
+}

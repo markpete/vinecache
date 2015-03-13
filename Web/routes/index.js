@@ -8,6 +8,12 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'VineCache' });
 });
 
+
+/* GET home page. */
+router.get('/event', function (req, res, next) {
+    res.render('event', { title: 'Event' });
+});
+
 io.on('connection', function(socket){
   socket.on('chat message', function(msg){
     io.emit('chat message', msg);
