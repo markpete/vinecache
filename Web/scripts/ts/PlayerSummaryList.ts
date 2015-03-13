@@ -3,7 +3,7 @@
 module PlayerSummaryList {
     class AutoRefreshListBuilder extends ListUtilities.ListBuilder {
         private _refreshRate: number;
-        constructor(ip: ListUtilities.ListItemProvider, refreshRate: number = 30000) {
+        constructor(ip: ListUtilities.ListItemProvider, refreshRate: number = 60000) {
             super(ip);
             this._refreshRate = refreshRate;
         }
@@ -22,9 +22,9 @@ module PlayerSummaryList {
     class PlayerSummaryProvider implements ListUtilities.ListItemProvider {
         private _eventHelper: EventHelper.EventHelper;
 
-        constructor(eventName: string) {
+        constructor() {
             Parse.initialize("ODbBwcIu8uZ4zuJ8PGsinEtXeyUswCXL9pUnddov", "H9tKhwb9aVps6QOxRYiG8NHEpXZdHK8Qlk6W8nF5");
-            this._eventHelper = new EventHelper.EventHelper(eventName);
+            this._eventHelper = new EventHelper.EventHelper();
         }
 
         addItems(list: HTMLUListElement) {
@@ -54,7 +54,7 @@ module PlayerSummaryList {
 
             var collapseButton = document.createElement("button");
             collapseButton.type = "button";
-            collapseButton.className = "btn btn-primary";
+            collapseButton.className = "btn btn-success";
             collapseButton.setAttribute("data-toggle", "collapse");
             collapseButton.setAttribute("data-target", "#" + videosSection.id);
             collapseButton.setAttribute("aria-expanded", "false");
@@ -93,5 +93,5 @@ module PlayerSummaryList {
         }
     }
 
-    export var PlayerSummaryListBuilder = new AutoRefreshListBuilder(new PlayerSummaryProvider("Microsoft Hunt"));
+    export var PlayerSummaryListBuilder = new AutoRefreshListBuilder(new PlayerSummaryProvider());
 }

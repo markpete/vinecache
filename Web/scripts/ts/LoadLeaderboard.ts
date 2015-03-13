@@ -1,16 +1,26 @@
-﻿if (document.readyState === "complete") {
-    initPage();
-} else {
-    document.addEventListener("DOMContentLoaded",(ev: Event) => {
+﻿(function () {
+    if (document.readyState === "complete") {
         initPage();
-    });
-}
+    } else {
+        document.addEventListener("DOMContentLoaded",(ev: Event) => {
+            initPage();
+        });
+    }
 
-function initPage() {
-    GlobalNav.GlobalNavBuilder.buildNav();
-    var header = document.createElement("h1");
-    header.innerText = "Leaderboard";
-    document.body.appendChild(header);
-    var list = PlayerSummaryList.PlayerSummaryListBuilder.buildList();
-    document.body.appendChild(list);
-}
+    function initPage() {
+        var headerContainer = document.createElement("div");
+        headerContainer.className = "page-header";
+        document.body.appendChild(headerContainer);
+
+        GlobalNav.GlobalNavBuilder.buildNav(headerContainer);
+
+        var header = document.createElement("h2");
+        header.innerHTML = "Leaderboard <small>" + sessionStorage.getItem("eventName") + "</small>";
+        header.style.color = "#4E9A06";
+        document.body.appendChild(header);
+
+        var list = PlayerSummaryList.PlayerSummaryListBuilder.buildList();
+        document.body.appendChild(list);
+    }
+
+})();
