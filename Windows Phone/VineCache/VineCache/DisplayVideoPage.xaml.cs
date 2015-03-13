@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.Devices.Geolocation;
 using Windows.Storage;
+using System.Threading.Tasks;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
 
@@ -26,6 +27,7 @@ namespace VineCache
     {
         private Geopoint startingPoint;
         private double m_startingDistance;
+		private bool videoTargetSet = false;
 
         public DisplayVideoPage()
         {
@@ -74,8 +76,10 @@ namespace VineCache
 
         private async void videoMediaElement_Tapped(object sender, TappedRoutedEventArgs e)
         {
-			SetVideoTarget();
-			//this.NavigateToUploadVideoPage();
+			if (!videoTargetSet)
+			{
+				await SetVideoTarget();
+			}
 			videoMediaElement.Play();
             distanceToObjectProgressBar.Value = 50;
             if (this.startingPoint == null)
@@ -89,9 +93,12 @@ namespace VineCache
             }
         }
 
-		public void SetVideoTarget()
+		public async Task SetVideoTarget()
 		{
-			this.videoMediaElement.Source = new Uri(KnownFolders.VideosLibrary.Path + "/vinecachetargetvideo.mp4");
+			StorageFile file = await KnownFolders.VideosLibrary.GetFileAsync("vinecachetargetvideo.mp4");
+			var stream = await file.OpenAsync(FileAccessMode.Read);
+			videoMediaElement.SetSource(stream, file.ContentType);
+			videoTargetSet = true;
 		}
 
         private void NavigateToUploadVideoPage()
@@ -105,5 +112,10 @@ namespace VineCache
             //TODO: Get GPS Point from Node
             return new Point(47.6455, -122.1286);
         }
-    }
+
+		private void NextPageButton_Click(object sender, RoutedEventArgs e)
+		{
+			NavigateToUploadVideoPage();
+        }
+	}
 }
