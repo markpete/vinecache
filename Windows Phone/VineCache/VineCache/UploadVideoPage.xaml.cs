@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Media.Capture;
 using Windows.Media.MediaProperties;
 using Windows.Phone.UI.Input;
 using Windows.Storage;
+using Windows.Storage.Streams;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -62,6 +64,58 @@ namespace VineCache
             await this.mediaCapture.StopRecordAsync();
         }
 
+        private void UploadRecordedVideo()
+        {
+            App.parseDB.parseDelegate = new UploadVideoParseDelegate();
+            App.parseDB.GetNextAvailableEvent();
+        }
+
+        internal class UploadVideoParseDelegate : ParseDelegate
+        {
+            public void EventResult(PLEvent eventItem)
+            {
+                App.parseDB.GetMap(eventItem);
+            }
+
+            public void MapResult(PLMap mapItem)
+            {
+                App.parseDB.GetNodes(mapItem);
+            }
+
+            public async void NodeResult(List<PLNode> nodeList)
+            {
+                StorageFile videoStorageFile = await KnownFolders.VideosLibrary.GetFileAsync(VideoFileName);
+                if (videoStorageFile != null)
+                {
+                    byte[] videoData = await ReadFile(videoStorageFile);
+                    App.parseDB.UploadVideo(videoData, nodeList[App.currentNodeNumba]);
+                }
+            }
+
+            public void VideoRetrieved(PLNode node)
+            {
+            }
+        }
+
+
+        /// <summary>
+        /// Loads the byte data from a StorageFile
+        /// </summary>
+        /// <param name="file">The file to read</param>
+        private static async Task<byte[]> ReadFile(StorageFile file)
+        {
+            byte[] fileBytes = null;
+            using (IRandomAccessStreamWithContentType stream = await file.OpenReadAsync())
+            {
+                fileBytes = new byte[stream.Size];
+                using (DataReader reader = new DataReader(stream))
+                {
+                    await reader.LoadAsync((uint)stream.Size);
+                    reader.ReadBytes(fileBytes);
+                }
+            }
+            return fileBytes;
+        }
 
         /// <summary>
         /// Invoked when this page is about to be displayed in a Frame.
@@ -72,7 +126,7 @@ namespace VineCache
         {
             this.InitVideoCapture();
         }
-        
+
         private void StartRecordingButton_Click(object sender, RoutedEventArgs e)
         {
             StartRecordingVideo();
@@ -80,8 +134,9 @@ namespace VineCache
 
         private void UploadRecordingButton_Click(object sender, RoutedEventArgs e)
         {
-            StopRecordingVideo();
+            UploadRecordedVideo();
         }
+
 
         private void videoMediaElement_Tapped(object sender, RoutedEventArgs e)
         {

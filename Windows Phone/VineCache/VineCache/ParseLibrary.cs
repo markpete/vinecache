@@ -318,7 +318,7 @@ namespace VineCache
 			var video = new ParseObject("Videos");
 			video["Video"] = file;
 			video["Node"] = node.pfNode;
-			var relation = node.pfNode.GetRelation<ParseObject>("Videos");
+			var relation = _PLPlayer.pfPlayer.GetRelation<ParseObject>("Videos");
 			relation.Add(video);
 			node.pfNode.SaveAsync();
 		}
