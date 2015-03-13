@@ -55,7 +55,9 @@ class UploadVideoViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     func uploadVideo() {
-        
+        let videoData = NSData(contentsOfURL: self.videoURL)
+        _ParseDB?.UploadVideo(videoData!, node: _PLPlayer!.CurrentNode)
+        _PLPlayer?.Score += 1
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
@@ -65,7 +67,7 @@ class UploadVideoViewController: UIViewController, UIImagePickerControllerDelega
 
         self.videoController = MPMoviePlayerController(contentURL: self.videoURL)
         self.videoController.view.center = self.view.center
-        self.videoController.view.frame = CGRectMake(50, 50, 300, 450)
+        self.videoController.view.frame = CGRectMake(50, 50, 200, 300)
         self.videoController.controlStyle = MPMovieControlStyle.Embedded
         self.view.addSubview(self.videoController.view)
         self.videoController.play()
