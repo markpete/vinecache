@@ -8,6 +8,7 @@
     }
 
     function initPage() {
+        GlobalNav.GlobalNavBuilder.buildNav();
         var list = PlayerSummaryList.PlayerSummaryListBuilder.buildList();
         document.body.appendChild(list);
     }

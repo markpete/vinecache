@@ -1,13 +1,15 @@
+
 nav
 {
-    display:block
+    display:block;
 }
 nav ol,nav ul
 {
     list-style:none;
     margin:0;
-    padding:0
+    padding:0;
 }
+
 .nav-collapse.disable-pointer-events
 {
     pointer-events:none !important;
@@ -23,14 +25,17 @@ nav ol,nav ul
     -moz-box-sizing:border-box;
     box-sizing:border-box
 }
+
 .nav-collapse,.nav-collapse ul
 {
     margin:0;
     padding:0;
     list-style:none;
     width:100%;
-    float:left
+  /*  float:left */
+
 }
+
 @media screen and (min-width:46.25em)
 {
     .nav-collapse,.nav-collapse ul
@@ -38,12 +43,14 @@ nav ol,nav ul
         text-align:center
     }
 }
+
 .nav-collapse li
 {
-    float:left;
+ /*   float:left; */
     width:100%;
     display:block
 }
+
 @media screen and (min-width:46.25em)
 {
     .nav-collapse li
@@ -57,6 +64,7 @@ nav ol,nav ul
         margin-right:.2em
     }
 }
+
 .nav-collapse a
 {
     text-transform:uppercase;
@@ -69,13 +77,14 @@ nav ol,nav ul
     background:#4e9a06;
     border-bottom:1px solid white;
     padding:.5em 1em;
-    float:left
+/*    float:left */
 }
 .nav-collapse a:focus
 {
     background:#306004;
     outline:none
 }
+
 @media screen and (min-width:46.25em)
 {
     .nav-collapse a
@@ -132,6 +141,7 @@ nav ol,nav ul
         max-height:none
     }
 }
+
 .nav-collapse.opened
 {
     max-height:9999px

@@ -41,14 +41,6 @@
         var list = EventList.EventListBuilder.buildList();
         listCol.appendChild(list);
 
-        var button = document.createElement("button");
-        button.type = "button";
-        button.innerText= "OK";
-        button.onclick=function () {
-            window.location.href =  './fungus';
-        }
-        listCol.appendChild(button);
-
         row.appendChild(imgCol);
         row.appendChild(listCol);
 
