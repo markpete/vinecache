@@ -10,7 +10,10 @@ if (document.readyState === "complete") {
 }
 
 function initPageNew() {
-    var title = document.title;
+    var eventInfo = JSON.parse(sessionStorage.getItem("currentEvent"));
+    var title = (eventInfo && eventInfo.Name || "Event")
+
+    GlobalNav.GlobalNavBuilder.buildNav();
     var header = document.createElement("h1");
     header.innerText = title;
     document.body.appendChild(header);
