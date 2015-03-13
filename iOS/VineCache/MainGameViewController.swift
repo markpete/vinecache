@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 import MediaPlayer
 
-class MainGameViewController: UIViewController {
+class MainGameViewController: UIViewController, TimerDelegate{
 
     @IBOutlet var videoPlayer: MPMoviePlayerController!
 
@@ -19,9 +19,14 @@ class MainGameViewController: UIViewController {
         
         /* load a count down view */
         var gamelaunchTimerView:TimerView = TimerView.loadingCountDownTimerViewInView(self.view)
+        gamelaunchTimerView.delegate = self
         gamelaunchTimerView.startTimer()
     }
 
+//    @IBAction func GetVideoButtonClick(sender: UIButton) {
+//        getNextVideo()
+//    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -31,12 +36,19 @@ class MainGameViewController: UIViewController {
         self.performSegueWithIdentifier("segueIdentifier", sender: self)
     }
     
-//    func getNextVideo() {
-//        self.videoPlayer = MPMoviePlayerController()
-//        self.videoPlayer.view.center = self.view.center
-//        self.videoPlayer.view.frame = CGRectMake(50, 50, 300, 450)
-//        self.videoPlayer.controlStyle = MPMovieControlStyle.Embedded
-//        self.videoPlayer.shouldAutoplay = false
-//        self.view.addSubview(self.videoPlayer.view)
-//    }
+    func eventStarted() {
+        getNextVideo()
+    }
+    
+    func getNextVideo() {
+        let path = NSBundle.mainBundle().pathForResource("Fountain", ofType:"mp4")
+        let url = NSURL.fileURLWithPath(path!)
+        videoPlayer = MPMoviePlayerController(contentURL: url)
+        videoPlayer.view.center = self.view.center
+        videoPlayer.view.frame = CGRectMake(20, 100, 280, 250)
+        videoPlayer.controlStyle = MPMovieControlStyle.Embedded
+        videoPlayer.shouldAutoplay = false
+        self.view.addSubview(self.videoPlayer.view)
+        videoPlayer.play()
+    }
 }

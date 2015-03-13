@@ -188,9 +188,7 @@ class ParseDB {
 
     func GetNextAvailableEvent() {
         
-        var EventQuery = PFQuery(className:"Event")
-        EventQuery.orderByAscending("StartTime")
-        EventQuery.whereKey("StartTime", greaterThan: NSDate())
+        var EventQuery = PFQuery(className:"Event").orderByAscending("StartTime").whereKey("StartTime", greaterThan: NSDate())
         EventQuery.getFirstObjectInBackgroundWithBlock { (event: PFObject!, error: NSError!) -> Void in
             if(error != nil) {
                 return

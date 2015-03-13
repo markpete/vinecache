@@ -55,9 +55,9 @@ class UploadVideoViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     func uploadVideo() {
-        let videoData = NSData(contentsOfURL: self.videoURL)
-        _ParseDB?.UploadVideo(videoData!, node: _PLPlayer!.CurrentNode)
-        _PLPlayer?.Score += 1
+//        let videoData = NSData(contentsOfURL: self.videoURL)
+//        _ParseDB?.UploadVideo(videoData!, node: _PLPlayer!.CurrentNode)
+//        _PLPlayer?.Score += 1
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {

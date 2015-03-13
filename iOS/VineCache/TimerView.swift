@@ -18,12 +18,17 @@ var timer:NSTimer!
 import UIKit
 import QuartzCore
 
+protocol TimerDelegate {
+    func eventStarted()
+}
+
 class TimerView :UIView {
+    
+    var delegate:TimerDelegate? = nil
     
     struct Stored {
         static var timerLbl:UILabel!
     }
-    
     
     class func loadingCountDownTimerViewInView (_superView:UIView)-> TimerView
     {
@@ -67,6 +72,7 @@ class TimerView :UIView {
         }else if timerVal<0{
             timer.invalidate()
             removeCountDownTimerView()
+            self.delegate?.eventStarted()
         } else{
             Stored.timerLbl.text = "\(timerVal)"
         }
@@ -77,5 +83,6 @@ class TimerView :UIView {
         var mySuperView:UIView = self.superview!
         mySuperView.userInteractionEnabled = true
         super.removeFromSuperview()
+        
     }
 }

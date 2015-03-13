@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8404D85B1AAFAC3900EEE085 /* DisplayVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8404D85A1AAFAC3900EEE085 /* DisplayVideoViewController.swift */; };
 		8404D85D1AAFAC5300EEE085 /* UploadVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8404D85C1AAFAC5300EEE085 /* UploadVideoViewController.swift */; };
 		8404D85F1AAFBAFB00EEE085 /* Fountain.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8404D85E1AAFBAFB00EEE085 /* Fountain.mp4 */; };
 		8404D8611AB0E45700EEE085 /* MainGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8404D8601AB0E45700EEE085 /* MainGameViewController.swift */; };
@@ -49,7 +48,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8404D85A1AAFAC3900EEE085 /* DisplayVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayVideoViewController.swift; sourceTree = "<group>"; };
 		8404D85C1AAFAC5300EEE085 /* UploadVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadVideoViewController.swift; sourceTree = "<group>"; };
 		8404D85E1AAFBAFB00EEE085 /* Fountain.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fountain.mp4; sourceTree = "<group>"; };
 		8404D8601AB0E45700EEE085 /* MainGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainGameViewController.swift; sourceTree = "<group>"; };
@@ -175,7 +173,6 @@
 				D95E72F71AA978AF00DA1771 /* Supporting Files */,
 				84577E5D1AB20ED800F0C2E0 /* TimerView.swift */,
 				8404D8601AB0E45700EEE085 /* MainGameViewController.swift */,
-				8404D85A1AAFAC3900EEE085 /* DisplayVideoViewController.swift */,
 				8404D85C1AAFAC5300EEE085 /* UploadVideoViewController.swift */,
 				D94572F91AAA57D10020403B /* StartupViewController.swift */,
 			);
@@ -323,7 +320,6 @@
 				D95E72FA1AA978AF00DA1771 /* AppDelegate.swift in Sources */,
 				8404D8611AB0E45700EEE085 /* MainGameViewController.swift in Sources */,
 				D95E72FC1AA978AF00DA1771 /* FirstViewController.swift in Sources */,
-				8404D85B1AAFAC3900EEE085 /* DisplayVideoViewController.swift in Sources */,
 				D94572FA1AAA57D10020403B /* StartupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
