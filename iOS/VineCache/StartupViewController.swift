@@ -27,22 +27,46 @@ class StartupViewController: UIViewController, FBLoginViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    func loginViewFetchedUserInfo(loginView: FBLoginView!, user: FBGraphUser!) {
+    /*
+    func loginViewFetchedUserInfo(loginView: FBLoginView!, user: FBGraphUser) {
         println("User Logged In")
         fbProfilePic.profileID = user.objectID
+        
+        //Initialize Game
+        _ParseDB = ParseDB()
+        _ParseDB?.GetNextAvailableEvent()
+        _ParseDB?.CreatePlayer(user.name, FacebookId: user.objectID, event: _PLEvent!)
+        _ParseDB?.GetNodes(_PLMap!)
+        //_PLPlayer!.CurrentNode = _PLNodes!.first!
+        
+    
     }
+*/
     
     func loginViewFetchedUserInfo(loginView : FBLoginView!, user: FBGraphUser) {
         println("User: \(user)")
         println("User ID: \(user.objectID)")
         println("User Name: \(user.name)")
-        var userEmail = user.objectForKey("email") as String
-        println("User Email: \(userEmail)")
+        //var userEmail = user.objectForKey("email") as String
+        //println("User Email: \(userEmail)")
+        
+        //Initialize Game
+        _ParseDB = ParseDB()
+        //_ParseDB?.GetNextAvailableEvent()
+//        _ParseDB?.CreatePlayer(user.name, FacebookId: user.objectID, event: _PLEvent!)
+//        _ParseDB?.GetNodes(_PLMap!)
+        //_PLPlayer!.CurrentNode = _PLNodes!.first!
+        
+        //Navigate to main page
+        self.performSegueWithIdentifier("segueIdentifier", sender: self)
+        
+        //let DisplayVideoViewController = self.storyboard?.instantiateViewControllerWithIdentifier("DisplayVideoViewController") as SecondViewController
+        //self.navigationController?.pushViewController(DisplayVideoViewController, animated: true)
     }
+
     
     func loginViewShowingLoggedOutUser(loginView : FBLoginView!) {
-            println("User Logged Out")
+        println("User Logged Out")
     }
     
 }
