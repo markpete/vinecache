@@ -9,7 +9,8 @@ module EventHelper {
 
         constructor() {
             Parse.initialize("ODbBwcIu8uZ4zuJ8PGsinEtXeyUswCXL9pUnddov", "H9tKhwb9aVps6QOxRYiG8NHEpXZdHK8Qlk6W8nF5");
-            this._eventName = sessionStorage.getItem("eventName");
+            var currentEvent = sessionStorage.getItem("currentEvent");
+            this._eventName = currentEvent;
         }
 
         private get event(): Parse.IPromise<{}> {

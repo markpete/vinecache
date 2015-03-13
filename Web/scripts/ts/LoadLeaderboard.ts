@@ -15,7 +15,8 @@
         GlobalNav.GlobalNavBuilder.buildNav(headerContainer);
 
         var header = document.createElement("h2");
-        header.innerHTML = "Leaderboard <small>" + sessionStorage.getItem("eventName") + "</small>";
+        var currentEvent = sessionStorage.getItem("currentEvent") || "Event";
+        header.innerHTML = "Leaderboard <small>" + currentEvent + "</small>";
         header.style.color = "#4E9A06";
         document.body.appendChild(header);
 

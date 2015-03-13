@@ -47,7 +47,7 @@
         button.className = "btn btn-default";
         button.onclick = function () {
             var selectedItem: HTMLLIElement = <HTMLLIElement>($(list).children(".active").get(0));
-            sessionStorage.setItem("eventName", selectedItem.innerText);
+            sessionStorage.setItem("currentEvent", selectedItem.innerText);
             window.location.href =  './event';
         }
         listCol.appendChild(button);

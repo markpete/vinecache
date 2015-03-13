@@ -74,17 +74,17 @@ module MapModule {
         private initializeMapInternal() {
             Parse.initialize("ODbBwcIu8uZ4zuJ8PGsinEtXeyUswCXL9pUnddov", "H9tKhwb9aVps6QOxRYiG8NHEpXZdHK8Qlk6W8nF5");
 
-            var eventInfo = JSON.parse(sessionStorage.getItem("currentEvent"));
+            var eventName = sessionStorage.getItem("currentEvent");
 
-            var eventObj = new Parse.Object("Event");
-            eventObj.id = eventInfo.id;
-            eventObj.fetch({
+            var eventQuery = new Parse.Query("Event");
+            eventQuery.equalTo("Name", eventName);
+            eventQuery.first({
                 success: (results) => {
                     if(results == null) {
                         this.populateNodes(null);
                         return;
                     }
-                    var relation = eventObj.relation("Map");
+                    var relation = results.relation("Map");
                     var mapQuery = relation.query();
                     mapQuery.first({
                         success: (results) => {
@@ -109,7 +109,7 @@ module MapModule {
                     });
                 },
                 error: function (error) {
-                    alert("Failure retrieving an Event: " + eventInfo.Name);
+                    alert("Failure retrieving an Event: " + eventName);
                 }
             });
         }
