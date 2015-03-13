@@ -16,7 +16,7 @@ module GlobalNav {
 
             var navItems= {
                 Event: "event",
-                Leaders: "leaderboard"
+                Leaderboard: "leaderboard"
             }
 
             var list = document.createElement("ul");

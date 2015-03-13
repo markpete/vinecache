@@ -9,7 +9,7 @@ if (document.readyState === "complete") {
     });
 }
 
-function initPageNew() {f
+function initPageNew() {
     var title = document.title
 
     GlobalNav.GlobalNavBuilder.buildNav();

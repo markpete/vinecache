@@ -32,7 +32,7 @@ nav ol,nav ul
     padding:0;
     list-style:none;
     width:100%;
-  /*  float:left */
+    float:left 
 
 }
 
@@ -46,7 +46,7 @@ nav ol,nav ul
 
 .nav-collapse li
 {
- /*   float:left; */
+    float:left; 
     width:100%;
     display:block
 }
@@ -77,7 +77,7 @@ nav ol,nav ul
     background:#4e9a06;
     border-bottom:1px solid white;
     padding:.5em 1em;
-/*    float:left */
+    float:left 
 }
 .nav-collapse a:focus
 {
