@@ -1,8 +1,6 @@
 ﻿/// <reference path="../types/parse/parse.d.ts" />
 
 module EventHelper {
-    export var currentEventName: string = sessionStorage.getItem("eventName");
-
     export class EventHelper {
         private EventObject = Parse.Object.extend("Event");
         private _eventName: string;
@@ -11,7 +9,7 @@ module EventHelper {
 
         constructor() {
             Parse.initialize("ODbBwcIu8uZ4zuJ8PGsinEtXeyUswCXL9pUnddov", "H9tKhwb9aVps6QOxRYiG8NHEpXZdHK8Qlk6W8nF5");
-            this._eventName = currentEventName;
+            this._eventName = sessionStorage.getItem("eventName");
         }
 
         private get event(): Parse.IPromise<{}> {

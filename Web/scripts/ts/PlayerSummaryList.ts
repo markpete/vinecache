@@ -54,7 +54,7 @@ module PlayerSummaryList {
 
             var collapseButton = document.createElement("button");
             collapseButton.type = "button";
-            collapseButton.className = "btn btn-primary";
+            collapseButton.className = "btn btn-success";
             collapseButton.setAttribute("data-toggle", "collapse");
             collapseButton.setAttribute("data-target", "#" + videosSection.id);
             collapseButton.setAttribute("aria-expanded", "false");
