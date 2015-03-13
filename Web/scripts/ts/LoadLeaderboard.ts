@@ -8,11 +8,8 @@
     }
 
     function initPage() {
-        var headerContainer = document.createElement("div");
-        headerContainer.className = "page-header";
-        document.body.appendChild(headerContainer);
 
-        GlobalNav.GlobalNavBuilder.buildNav(headerContainer);
+        GlobalNav.GlobalNavBuilder.buildNav();
 
         var header = document.createElement("h2");
         var currentEvent = sessionStorage.getItem("currentEvent") || "Event";

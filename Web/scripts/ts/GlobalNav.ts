@@ -12,7 +12,7 @@ module GlobalNav {
 
             var navContainer = document.createElement("div");
             navContainer.id = "nav";
-            navContainer.className = "nav-collapse";
+            navContainer.className = "nav-collapse page-header";
 
             var navItems = {
                 Home: "/",
