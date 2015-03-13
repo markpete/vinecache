@@ -12,6 +12,7 @@ var _PLEvent: PLEvent?
 var _PLMap : PLMap?
 var _PLNodes: [PLNode]?
 var _PLPlayer: PLPlayer?
+var _ParseDB: ParseDB?
 
 protocol ParseDelegate {
     func EventResult(eventItem:PLEvent)
@@ -110,9 +111,9 @@ class PLPlayer {
         }
     }
     
-    var FacebookId: Int {
+    var FacebookId: String {
         get {
-            return pfPerson["FacebookId"] as Int
+            return pfPerson["FacebookId"] as String
         }
     }
     
@@ -121,7 +122,7 @@ class PLPlayer {
             return pfPlayer["Score"] as Int
         }
         set {
-            pfPlayer["score"] = newValue
+            pfPlayer["Score"] = newValue
             pfPlayer.saveEventually(nil)
         }
     }
@@ -211,10 +212,9 @@ class ParseDB {
         }
     }
     
-    func CreatePlayer(Name: String, Email: String, FacebookId: Int, event: PLEvent){
+    func CreatePlayer(Name: String, FacebookId: String, event: PLEvent){
         var person = PFObject(className: "Person")
         person["Name"] =  Name
-        person["Email"] = Email
         person["FacebookID"] = FacebookId
         
         var player = PFObject(className: "Player")

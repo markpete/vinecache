@@ -8,32 +8,35 @@
 
 import UIKit
 import CoreLocation
+import MediaPlayer
 
 class MainGameViewController: UIViewController {
 
+    @IBOutlet var videoPlayer: MPMoviePlayerController!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        /* load a count down view */
+        var gamelaunchTimerView:TimerView = TimerView.loadingCountDownTimerViewInView(self.view)
+        gamelaunchTimerView.startTimer()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     @IBAction func RecordButtonClick(sender: UIButton) {
         self.performSegueWithIdentifier("segueIdentifier", sender: self)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+//    func getNextVideo() {
+//        self.videoPlayer = MPMoviePlayerController()
+//        self.videoPlayer.view.center = self.view.center
+//        self.videoPlayer.view.frame = CGRectMake(50, 50, 300, 450)
+//        self.videoPlayer.controlStyle = MPMovieControlStyle.Embedded
+//        self.videoPlayer.shouldAutoplay = false
+//        self.view.addSubview(self.videoPlayer.view)
+//    }
 }

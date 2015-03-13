@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.Devices.Geolocation;
+using Windows.Storage;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
 
@@ -73,8 +74,9 @@ namespace VineCache
 
         private async void videoMediaElement_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            this.NavigateToUploadVideoPage();
-            videoMediaElement.Play();
+			SetVideoTarget();
+			//this.NavigateToUploadVideoPage();
+			videoMediaElement.Play();
             distanceToObjectProgressBar.Value = 50;
             if (this.startingPoint == null)
             {
@@ -86,6 +88,11 @@ namespace VineCache
                 }
             }
         }
+
+		public void SetVideoTarget()
+		{
+			this.videoMediaElement.Source = new Uri(KnownFolders.VideosLibrary.Path + "/vinecachetargetvideo.mp4");
+		}
 
         private void NavigateToUploadVideoPage()
         {

@@ -10,22 +10,22 @@
     }
 
     function initPage() {
-        var headerContainer = document.createElement("div");
-        headerContainer.className = "page-header";
-        document.body.appendChild(headerContainer);
+        var masterDiv = document.createElement("div");
 
         var eventInfo = sessionStorage.getItem("currentEvent");
         var title = (eventInfo || "Event")
 
-        GlobalNav.GlobalNavBuilder.buildNav(headerContainer);
+        GlobalNav.GlobalNavBuilder.buildNav();
 
         var header = document.createElement("h2");
         header.innerText = title;
         header.style.color = "#4E9A06";
-        document.body.appendChild(header);
+        masterDiv.appendChild(header);
 
         var mapDiv = document.createElement("div");
         mapDiv.id = "map-canvas";
+        //masterDiv.appendChild(mapDiv);
+        document.body.appendChild(masterDiv);
         document.body.appendChild(mapDiv);
         (new MapModule.Map()).initializeMap(); 
         //window.addEventListener('load', function () {

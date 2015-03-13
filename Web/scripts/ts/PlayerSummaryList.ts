@@ -36,6 +36,7 @@ module PlayerSummaryList {
         private buildItem(player: EventHelper.Player) {
             var item = document.createElement("li");
             item.className = "list-group-item";
+            item.style.overflow = "hidden";
             item.innerText = player.name;
 
             var videosSection = document.createElement("div");

@@ -11,7 +11,7 @@ import MediaPlayer
 
 class DisplayVideoViewController: UIViewController {
     
-    var videoPlayer : MPMoviePlayerController?
+    @IBOutlet var videoPlayer: MPMoviePlayerController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
