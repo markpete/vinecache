@@ -180,18 +180,23 @@ namespace VineCache
 
 		internal class VineCacheParseDelegate : ParseDelegate
 		{
+			bool eventReturned = false;
 			public void EventResult(PLEvent eventItem)
 			{
-				FacebookClient client = new FacebookClient(facebookToken);
-				client.GetTaskAsync("me", new { fields = "name, id, email" }).ContinueWith((Task<object> task, object item) => {
-					dynamic facebookInfo = task.Result;
-					App.facebookName = facebookInfo.name;
-					App.facebookID = facebookInfo.id;
-					//App.facebookEmail = facebookInfo.email;
-					parseDB.CreatePlayer(App.facebookName, App.facebookEmail, App.facebookID, item as PLEvent);
-					parseDB.GetMap(item as PLEvent);
-				}, eventItem);
-				
+				if (eventReturned)
+				{
+					FacebookClient client = new FacebookClient(facebookToken);
+					client.GetTaskAsync("me", new { fields = "name, id, email" }).ContinueWith((Task<object> task, object item) =>
+					{
+						dynamic facebookInfo = task.Result;
+						App.facebookName = facebookInfo.name;
+						App.facebookID = facebookInfo.id;
+						//App.facebookEmail = facebookInfo.email;
+						parseDB.CreatePlayer(App.facebookName, App.facebookEmail, App.facebookID, item as PLEvent);
+						parseDB.GetMap(item as PLEvent);
+					}, eventItem);
+				}
+				eventReturned = true;
 			}
 
 			public void MapResult(PLMap mapItem)

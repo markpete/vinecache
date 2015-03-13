@@ -10,10 +10,11 @@
 
     <Grid Background="White">
         <TextBlock x:Name="gameNameTextBlock" Text="(Game name goes here)" Foreground="Green" FontSize="22" FontWeight="SemiBold" Margin="20,20,0,575"/>
-        <TextBlock Text="Find the location this video was taken:" Foreground="Green" FontSize="16" Margin="20,65,0,555"/>
+        <TextBlock Tapped="videoMediaElement_Tapped" Text="Find the location this video was taken:" Foreground="Green" FontSize="16" Margin="20,65,0,555"/>
         <StackPanel Background="Black" Margin="20,90,20,0" VerticalAlignment="Top" >
-            <MediaElement x:Name="videoMediaElement" Source="Assets/Fountain.small.mp4" AutoPlay="False" Tapped="videoMediaElement_Tapped" VerticalAlignment="Top"/>
+            <MediaElement x:Name="videoMediaElement" Source="C:/Data/Users/Public/Videos/vinecachetargetvideo.mp4" AutoPlay="False" Tapped="videoMediaElement_Tapped" VerticalAlignment="Top"/>
         </StackPanel>
+        <Button Name="NextPageButton" Content="Upload my video" Background="Green" HorizontalAlignment="Center" Click="NextPageButton_Click"/>
         <ProgressBar x:Name="distanceToObjectProgressBar" FlowDirection="LeftToRight" HorizontalAlignment="Left" Height="20" VerticalAlignment="Bottom" Margin="20,0,0,20" Width="360" />
     </Grid>
 </Page>

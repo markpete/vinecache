@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace VineCache
 {
@@ -225,7 +226,8 @@ namespace VineCache
 
 				try
 				{
-					PLMap map = new PLMap((task.Result as ParseObject[])[0]);
+					ParseObject[] objects = task.Result.ToArray();
+					PLMap map = new PLMap(objects[0]);
 					
 					ParseDB._PLMap = map;
 
